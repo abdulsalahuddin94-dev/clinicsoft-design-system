@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { PrimitiveColors, SemanticColors } from './Foundations';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+Figma page `➜ Colors`. Two collections: **Primitives** (raw ramps, the only place raw hex is allowed) and **Semantic** (one mode, **Dark**; each value aliases a Primitive). Components use Semantic tokens only. Brand green `#299B48` is `brand/600`; filled green buttons use near-black text (`color/action/primary/text`, 5.6:1).
+
+## Semantic (Dark)
+### Text
+<SemanticColors filter="color/text/" />
+
+### Background
+<SemanticColors filter="color/bg/" />
+
+### Border
+<SemanticColors filter="color/border/" />
+
+### Icon
+<SemanticColors filter="color/icon/" />
+
+### Action
+<SemanticColors filter="color/action/" />
+
+## Primitives
+<PrimitiveColors />

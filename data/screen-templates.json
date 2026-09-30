@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "platform": "Web",
+    "project": "ClinicSoft",
+    "source": "Copied from Trianglz/data/screen-templates.json (2026-09-30) and adapted to ClinicSoft component names and clinic content.",
+    "rule": "Screens are assembled only from components in component-registry.json and tokens in tokens.json. \"(to build)\" means the component is missing: build it first, lower tiers first.",
+    "skills": [
+      "figma-generate-design",
+      "figma-use",
+      "ui-ux-pro-max",
+      "audit-design-system"
+    ],
+    "frames": {
+      "Desktop": [
+        1440,
+        1024
+      ],
+      "iPad": [
+        768,
+        1024
+      ],
+      "Mobile": [
+        375,
+        812
+      ]
+    },
+    "grid_styles": {
+      "Desktop": "Grid/Desktop 1440",
+      "iPad": "Grid/iPad 768",
+      "Mobile": "Grid/Mobile 375"
+    },
+    "dark_mode": "ClinicSoft is Dark only: every frame uses the Semantic mode Dark. There is no Light frame to duplicate.",
+    "screens_file": "Screens are built in the Design file \"NEW PROJECT Design File\" using the DS library; never in the DS file.",
+    "app_shell": "Signed-in pages: Sidebar (264, left) + Top Bar (64, top) + content on color/bg/primary. Mobile: no Sidebar; Top Bar with an Icon Button (Icon/Menu) that opens it."
+  },
+  "templates": {
+    "sign_in": {
+      "tier": "Pattern",
+      "status": "Login / Desktop (1440x900) and Login / Mobile (375x812) built 2026-09-30 in the Design file, approved 2026-09-30",
+      "use": "Staff sign in with email and password.",
+      "layout": "Desktop: two columns, Brand Panel 560 wide (bg/secondary, logo, headline 4xl, supporting text, footer) + Form Panel with the form centered, max width 400. Mobile: single column, 16 margins (space/4 in Mobile mode), logo on top. Sizes follow Intake 7d (1440 / 375).",
+      "sections": [
+        {
+          "name": "Header",
+          "components": [
+            "Icon/Heart Pulse"
+          ],
+          "content": "logo (Icon/Heart Pulse + ClinicSoft lg/Bold), title Welcome back (3xl/Semi Bold desktop, 2xl mobile), subtitle (base/Regular, text/secondary)"
+        },
+        {
+          "name": "Form",
+          "components": [
+            "Input / Text (Work email, Show Leading Icon + Icon/Mail)",
+            "Input / Password (Leading Icon Icon/Lock; eye Icon Button shows/hides)",
+            "Checkbox (Keep me signed in)",
+            "Button Type=Link Size=sm (Forgot password?)"
+          ],
+          "gap": "space/6"
+        },
+        {
+          "name": "Actions",
+          "components": [
+            "Button Type=Filled Size=lg (Sign in, full width)",
+            "Button Type=Outline Size=lg (Sign in with a phone code, Leading Icon Icon/Phone)"
+          ],
+          "gap": "space/3"
+        },
+        {
+          "name": "Footer",
+          "components": [
+            "Button Type=Link Size=sm (Ask your clinic admin for an invite)"
+          ],
+          "content": "New to ClinicSoft? (sm/Regular, text/muted)"
+        }
+      ],
+      "states": [
+        "default",
+        "field error (Input State=Error + Error Message)",
+        "loading (Button State=Loading)",
+        "server error (Alert Status=Error above the form)"
+      ],
+      "tokens": {
+        "background": "color/bg/primary",
+        "card": "color/bg/secondary (optional panel, radius/xl)",
+        "section_gap": "space/10",
+        "margin": "Grid margin (80 / 32 / 16)"
+      },
+      "not_drawn_yet": [
+        "loading (Button State=Loading)",
+        "field error (Input State=Error + Error Message)",
+        "server error (Alert Status=Error above the form)"
+      ]
+    },
+    "sign_up": {
+      "tier": "Pattern",
+      "use": "Patient or staff account creation.",
+      "extends": "sign_in",
+      "sections": [
+        {
+          "name": "Form",
+          "components": [
+            "Input / Text (Full name)",
+            "Input / Text (Email)",
+            "Input / Phone (Mobile number)",
+            "Input / Date (Date of birth)",
+            "Input / Password (Password + Hint with the rules)",
+            "Input / Password (Confirm password)",
+            "Checkbox (Accept terms and consent, required)"
+          ]
+        },
+        {
+          "name": "Actions",
+          "components": [
+            "Button Type=Filled Size=base (Create account, State=Disabled until valid)"
+          ]
+        }
+      ]
+    },
+    "otp_verification": {
+      "tier": "Pattern",
+      "use": "Verify a code sent by SMS or email (patient login, prescription pickup).",
+      "sections": [
+        {
+          "name": "Header",
+          "components": [
+            "Button Type=Link with Leading Icon Icon/Arrow Left (Back)"
+          ],
+          "content": "title, OTP / Field Message \"Sent to +971 50 ••• 4567\""
+        },
+        {
+          "name": "Code",
+          "components": [
+            "OTP / Field (6 cells, auto-advance, paste support)"
+          ]
+        },
+        {
+          "name": "Actions",
+          "components": [
+            "Button Type=Filled Size=base (Verify)",
+            "Button Type=Link (Resend code, State=Disabled with countdown)"
+          ]
+        }
+      ],
+      "states": [
+        "Default",
+        "Filled",
+        "Error (Error Message)",
+        "Success (Success Message)",
+        "resend countdown"
+      ]
+    },
+    "list": {
+      "tier": "Pattern",
+      "use": "Browse a collection (patients, appointments, invoices, lab results).",
+      "sections": [
+        {
+          "name": "Shell",
+          "components": [
+            "Sidebar (one Sidebar / Item Selected)",
+            "Top Bar (Page Title, Search, primary action e.g. New appointment)"
+          ]
+        },
+        {
+          "name": "Filters",
+          "components": [
+            "Tabs / Bar Type=Segmented or Underline (Today / Upcoming / Past)",
+            "Select / Dropdown (Doctor, Branch)",
+            "Icon Button Type=Outline (Icon/Filter)"
+          ]
+        },
+        {
+          "name": "Items",
+          "components": [
+            "Table or List item (Organism/Molecule, to build) x N with Avatar, name, Badge status, row Icon Button (Icon/More Horizontal) opening Menu"
+          ],
+          "rules": "pagination under tables; row actions in a Menu; destructive row action opens Modal Type=Danger"
+        },
+        {
+          "name": "Navigation",
+          "components": [
+            "Pagination (Show Summary: \"Showing 11-20 of 118 patients\")"
+          ]
+        }
+      ],
+      "states": [
+        "loading (Skeleton, to build)",
+        "empty (see empty_state)",
+        "error (Alert Status=Error + retry Button)",
+        "no search results"
+      ]
+    },
+    "detail": {
+      "tier": "Pattern",
+      "use": "One record with its info and actions (patient, appointment, invoice).",
+      "sections": [
+        {
+          "name": "Shell",
+          "components": [
+            "Sidebar",
+            "Top Bar (Page Title = record name)"
+          ]
+        },
+        {
+          "name": "Header",
+          "components": [
+            "Breadcrumb (Patients > Amira Saleh > Visit 12 Mar)",
+            "Avatar Size=60",
+            "Badge (status)"
+          ],
+          "content": "title (3xl/Semi Bold), meta (sm/Regular, text/secondary)"
+        },
+        {
+          "name": "Sections",
+          "components": [
+            "Tabs / Bar Type=Underline (Overview / Visits / Prescriptions / Files)",
+            "Card (Organism, to build) sections",
+            "Alert (for example expiring insurance)"
+          ]
+        },
+        {
+          "name": "Actions",
+          "components": [
+            "Button Type=Filled Size=base (main action)",
+            "Button Type=Outline",
+            "Icon Button (Icon/More Horizontal) + Menu"
+          ]
+        }
+      ]
+    },
+    "form": {
+      "tier": "Pattern",
+      "use": "Create or edit a record (book an appointment, add a patient).",
+      "sections": [
+        {
+          "name": "Shell",
+          "components": [
+            "Sidebar",
+            "Top Bar (Show Primary Action = false)",
+            "Breadcrumb"
+          ]
+        },
+        {
+          "name": "Fields",
+          "components": [
+            "Input / Text",
+            "Input / Date",
+            "Input / Phone",
+            "Select / Dropdown (Doctor, Branch, Time)",
+            "Radio group (Visit type: In person / Video)",
+            "Checkbox (Send reminder by SMS)",
+            "Stepper (Refills)",
+            "Text Area (Visit notes)",
+            "Upload Field (Referral letter)"
+          ],
+          "rules": "one column on mobile; labels above fields; hint between label and field; error below field; group related fields with section headers"
+        },
+        {
+          "name": "Actions",
+          "components": [
+            "Button Type=Filled Size=base (Save)",
+            "Button Type=Outline Size=base (Cancel)"
+          ]
+        }
+      ],
+      "states": [
+        "pristine",
+        "dirty",
+        "validation errors (Alert Status=Error summary + inline Error Message)",
+        "saving (Button State=Loading)",
+        "saved (Toast Status=Success)"
+      ]
+    },
+    "settings": {
+      "tier": "Pattern",
+      "use": "Grouped preferences (notifications, clinic profile, account).",
+      "sections": [
+        {
+          "name": "Shell",
+          "components": [
+            "Sidebar (Settings Selected)",
+            "Top Bar (Page Title Settings)"
+          ]
+        },
+        {
+          "name": "Groups",
+          "components": [
+            "Tabs / Bar Type=Underline (sections)",
+            "List item (Molecule, to build) with trailing Toggle / chevron / value",
+            "Toggle (instant settings)"
+          ],
+          "rules": "section headers; destructive row (Log Out, Delete account) last, danger color, opens Modal Type=Danger"
+        }
+      ],
+      "tokens": {
+        "background": "color/bg/primary",
+        "group_surface": "color/bg/secondary"
+      }
+    },
+    "empty_state": {
+      "tier": "Pattern",
+      "use": "No data yet, first run, or no results.",
+      "sections": [
+        {
+          "name": "Body",
+          "components": [
+            "Icon (Icon/* at 24 inside a bg/subtle circle, or an illustration)",
+            "Button Type=Filled Size=base (primary next step, for example New appointment)"
+          ],
+          "content": "title (2xl/Semi Bold), one-sentence explanation (base/Regular, text/secondary)"
+        }
+      ]
+    }
+  }
+}

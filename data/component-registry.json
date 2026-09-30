@@ -1,0 +1,1502 @@
+{
+  "meta": {
+    "platform": "Web",
+    "project": "ClinicSoft",
+    "figma_file": "NEW PROJECT Design system (to be renamed ClinicSoft Design System)",
+    "figma_url": "https://www.figma.com/design/m0G6wKSbVhgqWutfmt7vFU",
+    "theme": "Dark only (one Semantic mode, Dark)",
+    "source": {
+      "method": "figma_execute live read of the DS file (Desktop Bridge, read-only), stored in data/source/components-live.json; slots from documentation-frame screenshots and audits/2026-09-30-components.md",
+      "extracted_at": "2026-09-30",
+      "needs_resync": false
+    },
+    "descriptions_and_defaults": "Full Figma descriptions, property defaults and variant options per component: data/source/components-live.json",
+    "naming": "Find components by name (page + set name). Node ids and keys are not stored.",
+    "counts": {
+      "component_sets": 28,
+      "standalone_components": 5,
+      "variants_total": 434,
+      "icons": 40,
+      "text_styles": 40,
+      "effect_styles": 12,
+      "grid_styles": 3
+    },
+    "slots_extracted_at": "2026-09-30"
+  },
+  "pages": [
+    "Cover",
+    "⭐Setup",
+    "➜ Layout Grid",
+    "➜ Typography",
+    "➜ Colors",
+    "➜ Shadows",
+    "➜ Corner Radius & Spacing",
+    "➜ Icons",
+    "⭐Form Elements",
+    "➜ Input Fields and Dropdown",
+    "➜ Text Area",
+    "➜ Checkboxes",
+    "➜ Toggles",
+    "➜ Radio Buttons",
+    "⭐Navigation",
+    "➜ Buttons & Links",
+    "➜ Pagination, Tabs & Breadcrumb",
+    "➜ Navigation Bars",
+    "➜ Menus",
+    "⭐Data Display",
+    "➜ Avatars & Upload Image",
+    "➜ Tooltips",
+    "➜ Banners, Badges & Toasts",
+    "➜ Popups"
+  ],
+  "page_name_issues": [
+    "separator pages between groups not confirmed (see Foundation_Skill/references/gaps.md)"
+  ],
+  "components": [
+    {
+      "name": "Checkbox",
+      "group": "Form Elements",
+      "page": "➜ Checkboxes",
+      "tier": "Atom",
+      "variants": {
+        "Checked": [
+          "Unchecked",
+          "Checked",
+          "Indeterminate"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Error",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Label": "BOOLEAN"
+      },
+      "variant_count": 15,
+      "use": "Multi-select and consent choices that apply on submit. Not for instant settings (Toggle) or one-of-many (Radio).",
+      "nests": [
+        "Icon/Check",
+        "Icon/Minus"
+      ],
+      "slots": [
+        {
+          "property": "(check glyph)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Check (Checked), Icon/Minus (Indeterminate)"
+        }
+      ]
+    },
+    {
+      "name": "Radio",
+      "group": "Form Elements",
+      "page": "➜ Radio Buttons",
+      "tier": "Atom",
+      "variants": {
+        "Selected": [
+          "Off",
+          "On"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Error",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Label": "BOOLEAN"
+      },
+      "variant_count": 10,
+      "use": "Exactly one choice from 2-6 visible options (visit type, payment method). 5+ options -> Select / Dropdown.",
+      "nests": [],
+      "slots": []
+    },
+    {
+      "name": "Toggle",
+      "group": "Form Elements",
+      "page": "➜ Toggles",
+      "tier": "Atom",
+      "variants": {
+        "Value": [
+          "Off",
+          "On"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Label": "BOOLEAN"
+      },
+      "variant_count": 8,
+      "use": "A setting that applies at once (appointment reminders). Inside a saved form use Checkbox.",
+      "nests": [],
+      "slots": []
+    },
+    {
+      "name": "OTP / Cell",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Atom",
+      "variants": {
+        "State": [
+          "Default",
+          "Focus",
+          "Filled",
+          "Error",
+          "Disabled",
+          "Hover",
+          "Success"
+        ]
+      },
+      "properties": {
+        "Digit": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "One digit box of a one-time code; only inside OTP / Field. Digit hidden in Default and Focus.",
+      "nests": [],
+      "slots": []
+    },
+    {
+      "name": "Input / Text",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Error",
+          "Success",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Optional": "BOOLEAN",
+        "Show Info": "BOOLEAN",
+        "Hint": "TEXT",
+        "Show Hint": "BOOLEAN",
+        "Message": "TEXT",
+        "Show Message": "BOOLEAN",
+        "Show Leading Icon": "BOOLEAN",
+        "Leading Icon": "INSTANCE_SWAP",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Single-line free text (name, address, insurance number).",
+      "nests": [
+        "Icon/*",
+        "Icon/Info",
+        "Icon/Alert Circle",
+        "Icon/Check Circle"
+      ],
+      "slots": [
+        {
+          "property": "Leading Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/* (➜ Icons, Lucide, color/icon/*)",
+          "default": "Icon/User",
+          "rule": "shown when Show Leading Icon = true (default false)"
+        },
+        {
+          "property": "(info icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Info",
+          "rule": "shown when Show Info = true"
+        },
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Alert Circle (Error), Icon/Check Circle (Success)"
+        }
+      ]
+    },
+    {
+      "name": "Input / Password",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Error",
+          "Success",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Optional": "BOOLEAN",
+        "Show Info": "BOOLEAN",
+        "Hint": "TEXT",
+        "Show Hint": "BOOLEAN",
+        "Message": "TEXT",
+        "Show Message": "BOOLEAN",
+        "Show Leading Icon": "BOOLEAN",
+        "Leading Icon": "INSTANCE_SWAP",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Passwords; the eye Icon Button shows or hides the value.",
+      "nests": [
+        "Icon/Lock",
+        "Icon Button",
+        "Icon/Eye",
+        "Icon/Alert Circle",
+        "Icon/Check Circle"
+      ],
+      "slots": [
+        {
+          "property": "Leading Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Lock"
+        },
+        {
+          "property": "(show/hide)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button with Icon/Eye or Icon/Eye Off"
+        },
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Alert Circle (Error), Icon/Check Circle (Success)"
+        }
+      ]
+    },
+    {
+      "name": "Input / Date",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Error",
+          "Success",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Optional": "BOOLEAN",
+        "Show Info": "BOOLEAN",
+        "Hint": "TEXT",
+        "Show Hint": "BOOLEAN",
+        "Message": "TEXT",
+        "Show Message": "BOOLEAN",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Dates (DD/MM/YYYY) such as date of birth or visit date; the calendar icon opens a picker in code.",
+      "nests": [
+        "Icon/Calendar",
+        "Icon/Alert Circle",
+        "Icon/Check Circle"
+      ],
+      "slots": [
+        {
+          "property": "(calendar)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Calendar"
+        },
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Alert Circle (Error), Icon/Check Circle (Success)"
+        }
+      ]
+    },
+    {
+      "name": "Input / Phone",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Error",
+          "Success",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Optional": "BOOLEAN",
+        "Show Info": "BOOLEAN",
+        "Hint": "TEXT",
+        "Show Hint": "BOOLEAN",
+        "Message": "TEXT",
+        "Show Message": "BOOLEAN",
+        "Show Leading Icon": "BOOLEAN",
+        "Leading Icon": "INSTANCE_SWAP",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Phone numbers with a country code prefix (default +971).",
+      "nests": [
+        "Icon/Chevron Down",
+        "Icon/Phone",
+        "Icon/Alert Circle",
+        "Icon/Check Circle"
+      ],
+      "slots": [
+        {
+          "property": "Leading Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Phone"
+        },
+        {
+          "property": "(country code)",
+          "kind": "fixed_nested",
+          "accepts": "text +971 + Icon/Chevron Down"
+        },
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Alert Circle (Error), Icon/Check Circle (Success)"
+        }
+      ]
+    },
+    {
+      "name": "Text Area",
+      "group": "Form Elements",
+      "page": "➜ Text Area",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Error",
+          "Disabled",
+          "Success"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Character Count": "BOOLEAN",
+        "Show Message": "BOOLEAN",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Message": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Multi-line text such as visit notes, symptoms, referral reasons.",
+      "nests": [],
+      "slots": []
+    },
+    {
+      "name": "Search",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Filled",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Placeholder": "TEXT"
+      },
+      "variant_count": 5,
+      "use": "Find records on the screen or across the app; Clear button when filled.",
+      "nests": [
+        "Icon/Search",
+        "Icon Button",
+        "Icon/Close"
+      ],
+      "slots": [
+        {
+          "property": "(search icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Search"
+        },
+        {
+          "property": "(clear)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button with Icon/Close",
+          "rule": "visible in Filled"
+        }
+      ]
+    },
+    {
+      "name": "Upload Field",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Uploading",
+          "Uploaded",
+          "Error",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Format Hint": "TEXT",
+        "Error Message": "TEXT",
+        "File Name": "TEXT"
+      },
+      "variant_count": 7,
+      "use": "Attach files to a record (lab reports, referral letters, ID scans).",
+      "nests": [
+        "Icon/Upload",
+        "Button",
+        "Icon Button",
+        "Icon/File Text",
+        "Icon/Close",
+        "Icon/Delete"
+      ],
+      "slots": [
+        {
+          "property": "(browse)",
+          "kind": "fixed_nested",
+          "accepts": "Button Type=Outline (Browse files)"
+        },
+        {
+          "property": "(file action)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button with Icon/Close (Uploading) or Icon/Delete (Uploaded)"
+        }
+      ]
+    },
+    {
+      "name": "OTP / Field",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Filled",
+          "Error",
+          "Disabled",
+          "Success"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Message": "TEXT",
+        "Error Message": "TEXT",
+        "Success Message": "TEXT"
+      },
+      "variant_count": 5,
+      "use": "Enter a one-time code (patient login, prescription pickup). 6 cells; hide cells 5-6 for 4-digit codes.",
+      "nests": [
+        "OTP / Cell"
+      ],
+      "slots": [
+        {
+          "property": "(cells)",
+          "kind": "fixed_nested",
+          "accepts": "OTP / Cell x 6",
+          "rule": "cell state follows the field state; hide, never detach"
+        }
+      ]
+    },
+    {
+      "name": "Stepper",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Min",
+          "Max",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Value": "TEXT"
+      },
+      "variant_count": 4,
+      "use": "Change a small whole number (tablets per dose, refills); ranges up to about 20.",
+      "nests": [
+        "Icon Button",
+        "Icon/Minus",
+        "Icon/Add"
+      ],
+      "slots": [
+        {
+          "property": "(decrease / increase)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Type=Outline with Icon/Minus and Icon/Add",
+          "rule": "Min disables Decrease, Max disables Increase"
+        }
+      ]
+    },
+    {
+      "name": "Select / Dropdown",
+      "group": "Form Elements",
+      "page": "➜ Input Fields and Dropdown",
+      "tier": "Organism",
+      "variants": {
+        "Open": [
+          "False",
+          "True"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Filled",
+          "Error",
+          "Disabled",
+          "Focus",
+          "Success"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Placeholder": "TEXT",
+        "Value": "TEXT",
+        "Error Message": "TEXT"
+      },
+      "variant_count": 8,
+      "use": "Pick one value from a list of 7 or more (doctor, branch, insurer, time slot); Radio for 2 to 6 visible options (Abdul, 2026-09-30). Open=True exists only with State=Focus.",
+      "issues": [
+        "Figma description still says Radio for 2 to 5; update it to 2 to 6 in the DS file and republish (decided 2026-09-30)"
+      ],
+      "nests": [
+        "Menu",
+        "Menu / Item",
+        "Icon/Chevron Down",
+        "Icon/Chevron Up",
+        "Icon/Check",
+        "Icon/Alert Circle",
+        "Icon/Check Circle"
+      ],
+      "slots": [
+        {
+          "property": "(options)",
+          "kind": "fixed_nested",
+          "accepts": "Menu with Menu / Item instances (exposed)",
+          "rule": "set option labels through the exposed Menu / Item properties; hide unused items"
+        },
+        {
+          "property": "(chevron)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Chevron Down (closed), Icon/Chevron Up (open)"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "group": "Navigation",
+      "page": "➜ Buttons & Links",
+      "tier": "Atom",
+      "variants": {
+        "Type": [
+          "Filled",
+          "Pill",
+          "Outline",
+          "Link",
+          "Danger"
+        ],
+        "Size": [
+          "xs",
+          "sm",
+          "base",
+          "lg",
+          "xl"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Focus",
+          "Disabled",
+          "Loading"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Leading Icon": "BOOLEAN",
+        "Show Trailing Icon": "BOOLEAN",
+        "Leading Icon": "INSTANCE_SWAP",
+        "Trailing Icon": "INSTANCE_SWAP"
+      },
+      "defaults": {
+        "Label": "Button",
+        "Show Leading Icon": false,
+        "Show Trailing Icon": false,
+        "Leading Icon": "Icon/Add",
+        "Trailing Icon": "Icon/Arrow Right"
+      },
+      "variant_count": 150,
+      "use": "Actions. One Filled/Pill per view; Outline secondary; Link inline; Danger destructive behind a Modal. Sizes xs 32, sm 36, base 40, lg 48, xl 56.",
+      "nests": [
+        "Icon/*",
+        "Icon/Loader"
+      ],
+      "slots": [
+        {
+          "property": "Leading Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Add",
+          "rule": "shown when Show Leading Icon = true; Loading shows Icon/Loader here"
+        },
+        {
+          "property": "Trailing Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Arrow Right",
+          "rule": "shown when Show Trailing Icon = true"
+        }
+      ]
+    },
+    {
+      "name": "Icon Button",
+      "group": "Navigation",
+      "page": "➜ Buttons & Links",
+      "tier": "Atom",
+      "variants": {
+        "Type": [
+          "Filled",
+          "Outline",
+          "Ghost",
+          "Danger"
+        ],
+        "Size": [
+          "xs",
+          "sm",
+          "base",
+          "lg",
+          "xl"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Pressed",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Icon": "INSTANCE_SWAP"
+      },
+      "variant_count": 100,
+      "use": "Icon-only action in toolbars and table rows; always aria-label + Tooltip.",
+      "nests": [
+        "Icon/*"
+      ],
+      "slots": [
+        {
+          "property": "Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Settings"
+        }
+      ]
+    },
+    {
+      "name": "Tabs / Item",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Atom",
+      "variants": {
+        "Type": [
+          "Underline",
+          "Segmented"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Selected",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Icon": "BOOLEAN",
+        "Icon": "INSTANCE_SWAP"
+      },
+      "variant_count": 10,
+      "use": "One tab; only inside Tabs / Bar.",
+      "nests": [
+        "Icon/*"
+      ],
+      "slots": [
+        {
+          "property": "Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Calendar",
+          "rule": "shown when Show Icon = true"
+        }
+      ]
+    },
+    {
+      "name": "Pagination / Item",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Atom",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Current",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Page": "TEXT"
+      },
+      "variant_count": 5,
+      "use": "One page number inside Pagination; \"…\" text in a Default item for gaps.",
+      "nests": [],
+      "slots": []
+    },
+    {
+      "name": "Breadcrumb / Item",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Atom",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Current",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Separator": "BOOLEAN"
+      },
+      "variant_count": 5,
+      "use": "One level of the page path inside Breadcrumb; last level Current with no separator.",
+      "nests": [
+        "Icon/Chevron Right"
+      ],
+      "slots": [
+        {
+          "property": "(separator)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Chevron Right",
+          "rule": "shown when Show Separator = true"
+        }
+      ]
+    },
+    {
+      "name": "Menu / Item",
+      "group": "Navigation",
+      "page": "➜ Menus",
+      "tier": "Atom",
+      "variants": {
+        "Type": [
+          "Default",
+          "Danger"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Selected",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Leading Icon": "BOOLEAN",
+        "Leading Icon": "INSTANCE_SWAP"
+      },
+      "variant_count": 10,
+      "use": "One option in a Menu or Select / Dropdown. Danger for destructive actions, last, after a divider.",
+      "nests": [
+        "Icon/*",
+        "Icon/Check"
+      ],
+      "issues": [
+        "Type=Danger shows the default label and Icon/Edit; override on the instance"
+      ],
+      "slots": [
+        {
+          "property": "Leading Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Edit",
+          "rule": "shown when Show Leading Icon = true"
+        },
+        {
+          "property": "(check mark)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Check",
+          "rule": "appears on Selected"
+        }
+      ]
+    },
+    {
+      "name": "Tabs / Bar",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Molecule",
+      "variants": {
+        "Type": [
+          "Underline",
+          "Segmented"
+        ]
+      },
+      "properties": {},
+      "variant_count": 2,
+      "use": "Underline for sections of one page; Segmented for view switchers (Day / Week / Month). 2 to 7 tabs, exactly one Selected.",
+      "nests": [
+        "Tabs / Item"
+      ],
+      "slots": [
+        {
+          "property": "(tabs)",
+          "kind": "fixed_nested",
+          "accepts": "Tabs / Item x 4 (exposed, same Type as the bar)",
+          "rule": "set Label/State/Icon through exposed properties; hide extras, never detach"
+        }
+      ]
+    },
+    {
+      "name": "Pagination",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Molecule",
+      "variants": {},
+      "properties": {
+        "Show Summary": "BOOLEAN",
+        "Summary": "TEXT"
+      },
+      "variant_count": 1,
+      "use": "Move between pages of long lists; first, last, current and neighbours with \"…\"; keep the result summary.",
+      "nests": [
+        "Pagination / Item",
+        "Icon Button",
+        "Icon/Chevron Left",
+        "Icon/Chevron Right"
+      ],
+      "slots": [
+        {
+          "property": "(pages)",
+          "kind": "fixed_nested",
+          "accepts": "Pagination / Item (exposed)"
+        },
+        {
+          "property": "(previous / next)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Ghost with Icon/Chevron Left / Icon/Chevron Right",
+          "rule": "State=Disabled at the ends"
+        }
+      ]
+    },
+    {
+      "name": "Breadcrumb",
+      "group": "Navigation",
+      "page": "➜ Pagination, Tabs & Breadcrumb",
+      "tier": "Molecule",
+      "variants": {},
+      "properties": {},
+      "variant_count": 1,
+      "use": "Page path on pages two or more levels deep; never the main navigation.",
+      "nests": [
+        "Breadcrumb / Item"
+      ],
+      "slots": [
+        {
+          "property": "(levels)",
+          "kind": "fixed_nested",
+          "accepts": "Breadcrumb / Item x 3 (exposed)",
+          "rule": "last level State=Current, Show Separator=false"
+        }
+      ]
+    },
+    {
+      "name": "Sidebar / Item",
+      "group": "Navigation",
+      "page": "➜ Navigation Bars",
+      "tier": "Molecule",
+      "variants": {
+        "State": [
+          "Default",
+          "Hover",
+          "Selected",
+          "Focus",
+          "Disabled"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Icon": "INSTANCE_SWAP",
+        "Show Count": "BOOLEAN"
+      },
+      "variant_count": 5,
+      "use": "One Sidebar destination; exactly one Selected.",
+      "nests": [
+        "Icon/*",
+        "Badge"
+      ],
+      "slots": [
+        {
+          "property": "Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Calendar"
+        },
+        {
+          "property": "(count)",
+          "kind": "fixed_nested",
+          "accepts": "Badge (exposed)",
+          "rule": "shown when Show Count = true"
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "group": "Navigation",
+      "page": "➜ Menus",
+      "tier": "Molecule",
+      "variants": {},
+      "properties": {},
+      "variant_count": 1,
+      "use": "2-8 actions opened from a button or row; destructive last after a divider. Picking a value -> Select / Dropdown.",
+      "nests": [
+        "Menu / Item"
+      ],
+      "slots": [
+        {
+          "property": "(items)",
+          "kind": "fixed_nested",
+          "accepts": "Menu / Item x 4 (exposed)",
+          "rule": "hide unused items instead of detaching"
+        }
+      ]
+    },
+    {
+      "name": "Sidebar",
+      "group": "Navigation",
+      "page": "➜ Navigation Bars",
+      "tier": "Organism",
+      "variants": {},
+      "properties": {},
+      "variant_count": 1,
+      "use": "Main app navigation on Desktop and iPad, 264px wide; up to 8 items, Settings and Log Out pinned at the bottom.",
+      "nests": [
+        "Sidebar / Item",
+        "Badge",
+        "Icon/Heart Pulse"
+      ],
+      "slots": [
+        {
+          "property": "(items)",
+          "kind": "fixed_nested",
+          "accepts": "Sidebar / Item x 8 (exposed)",
+          "rule": "one Selected; set Label/Icon/Show Count through exposed properties"
+        }
+      ]
+    },
+    {
+      "name": "Top Bar",
+      "group": "Navigation",
+      "page": "➜ Navigation Bars",
+      "tier": "Organism",
+      "variants": {},
+      "properties": {
+        "Page Title": "TEXT",
+        "Show Primary Action": "BOOLEAN",
+        "Show Search": "BOOLEAN"
+      },
+      "variant_count": 1,
+      "use": "Page header next to the Sidebar: title, search, notifications, one primary action, user. 64px high, 1176px on desktop.",
+      "nests": [
+        "Search",
+        "Icon Button",
+        "Button",
+        "Avatar",
+        "Icon/Bell",
+        "Icon/Add"
+      ],
+      "slots": [
+        {
+          "property": "(search)",
+          "kind": "fixed_nested",
+          "accepts": "Search (exposed)",
+          "rule": "shown when Show Search = true"
+        },
+        {
+          "property": "(notifications)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Ghost with Icon/Bell"
+        },
+        {
+          "property": "(primary action)",
+          "kind": "fixed_nested",
+          "accepts": "Button Type=Filled (exposed Label, Leading Icon)",
+          "rule": "shown when Show Primary Action = true; at most one"
+        },
+        {
+          "property": "(user)",
+          "kind": "fixed_nested",
+          "accepts": "Avatar Type=Initials (exposed Initials)"
+        }
+      ]
+    },
+    {
+      "name": "Badge",
+      "group": "Data Display",
+      "page": "➜ Banners, Badges & Toasts",
+      "tier": "Atom",
+      "variants": {
+        "Status": [
+          "Info",
+          "Success",
+          "Warning",
+          "Error",
+          "Neutral"
+        ],
+        "Size": [
+          "sm",
+          "md"
+        ]
+      },
+      "properties": {
+        "Label": "TEXT",
+        "Show Icon": "BOOLEAN",
+        "Icon": "INSTANCE_SWAP"
+      },
+      "variant_count": 10,
+      "use": "Short status word on a record (Confirmed, Pending, Cancelled, New, Draft).",
+      "nests": [
+        "Icon/*"
+      ],
+      "issues": [
+        "Label default \"Confirmed\" shows on every Status; override it"
+      ],
+      "slots": [
+        {
+          "property": "Icon",
+          "kind": "instance_swap",
+          "accepts": "Icon/*",
+          "default": "Icon/Info",
+          "rule": "shown when Show Icon = true"
+        }
+      ]
+    },
+    {
+      "name": "Avatar",
+      "group": "Data Display",
+      "page": "➜ Avatars & Upload Image",
+      "tier": "Atom",
+      "variants": {
+        "Type": [
+          "Initials",
+          "Icon"
+        ],
+        "Size": [
+          "24",
+          "32",
+          "40",
+          "60",
+          "100"
+        ]
+      },
+      "properties": {
+        "Initials": "TEXT",
+        "Show Status": "BOOLEAN"
+      },
+      "variant_count": 10,
+      "use": "Identify a person; Initials when there is no photo, Icon for unknown people.",
+      "nests": [
+        "Icon/User"
+      ],
+      "issues": [
+        "no Photo type (accepted gap)"
+      ],
+      "slots": [
+        {
+          "property": "(person icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/User",
+          "rule": "Type=Icon"
+        }
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "group": "Data Display",
+      "page": "➜ Tooltips",
+      "tier": "Atom",
+      "variants": {
+        "Arrow": [
+          "Up",
+          "Down",
+          "Left",
+          "Right"
+        ],
+        "Size": [
+          "Small",
+          "Large"
+        ]
+      },
+      "properties": {
+        "Text": "TEXT",
+        "Title": "TEXT"
+      },
+      "variant_count": 8,
+      "use": "Short hint on hover or focus; Small names an action, Large = title + body.",
+      "nests": [],
+      "issues": [
+        "Large shows the Small default text as its body; override it"
+      ],
+      "slots": []
+    },
+    {
+      "name": "Alert",
+      "group": "Data Display",
+      "page": "➜ Banners, Badges & Toasts",
+      "tier": "Molecule",
+      "variants": {
+        "Status": [
+          "Info",
+          "Success",
+          "Warning",
+          "Error"
+        ]
+      },
+      "properties": {
+        "Title": "TEXT",
+        "Message": "TEXT",
+        "Show Action": "BOOLEAN",
+        "Show Close": "BOOLEAN"
+      },
+      "variant_count": 4,
+      "use": "Inline message that stays until resolved (expiring insurance, missing consent, failed sync).",
+      "nests": [
+        "Icon/Info",
+        "Icon/Check Circle",
+        "Icon/Warning",
+        "Icon/Alert Circle",
+        "Button",
+        "Icon Button",
+        "Icon/Close"
+      ],
+      "slots": [
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Info, Icon/Check Circle, Icon/Warning, Icon/Alert Circle (per Status)"
+        },
+        {
+          "property": "(action)",
+          "kind": "fixed_nested",
+          "accepts": "Button Type=Link",
+          "rule": "shown when Show Action = true"
+        },
+        {
+          "property": "(close)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Ghost with Icon/Close",
+          "rule": "shown when Show Close = true"
+        }
+      ]
+    },
+    {
+      "name": "Toast",
+      "group": "Data Display",
+      "page": "➜ Banners, Badges & Toasts",
+      "tier": "Molecule",
+      "variants": {
+        "Status": [
+          "Info",
+          "Success",
+          "Warning",
+          "Error"
+        ]
+      },
+      "properties": {
+        "Title": "TEXT",
+        "Message": "TEXT",
+        "Show Action": "BOOLEAN",
+        "Show Close": "BOOLEAN"
+      },
+      "variant_count": 4,
+      "use": "Short temporary confirmation or error after an action; bottom-right.",
+      "nests": [
+        "Icon/Info",
+        "Icon/Check Circle",
+        "Icon/Warning",
+        "Icon/Alert Circle",
+        "Button",
+        "Icon Button",
+        "Icon/Close"
+      ],
+      "slots": [
+        {
+          "property": "(status icon)",
+          "kind": "fixed_nested",
+          "accepts": "Icon/Info, Icon/Check Circle, Icon/Warning, Icon/Alert Circle (per Status)"
+        },
+        {
+          "property": "(action)",
+          "kind": "fixed_nested",
+          "accepts": "Button Type=Link",
+          "rule": "shown when Show Action = true"
+        },
+        {
+          "property": "(close)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Ghost with Icon/Close",
+          "rule": "shown when Show Close = true"
+        }
+      ]
+    },
+    {
+      "name": "Modal",
+      "group": "Data Display",
+      "page": "➜ Popups",
+      "tier": "Organism",
+      "variants": {
+        "Type": [
+          "Default",
+          "Danger"
+        ]
+      },
+      "properties": {
+        "Title": "TEXT",
+        "Body": "TEXT",
+        "Show Content": "BOOLEAN",
+        "Show Close": "BOOLEAN"
+      },
+      "variant_count": 2,
+      "use": "Focused task or confirmation over the page (reschedule a visit, confirm cancelling an appointment).",
+      "nests": [
+        "Icon Button",
+        "Icon/Close",
+        "Icon/Warning",
+        "Button",
+        "Input / Date",
+        "Select / Dropdown"
+      ],
+      "issues": [
+        "Type=Danger shows the Default title; override it"
+      ],
+      "slots": [
+        {
+          "property": "(content)",
+          "kind": "fixed_nested",
+          "accepts": "Input / Date and Select / Dropdown (exposed)",
+          "rule": "shown when Show Content = true"
+        },
+        {
+          "property": "(actions)",
+          "kind": "fixed_nested",
+          "accepts": "Button Type=Outline (Cancel) + Button Type=Filled (Default) or Type=Danger (Danger)",
+          "rule": "labels through exposed properties"
+        },
+        {
+          "property": "(close)",
+          "kind": "fixed_nested",
+          "accepts": "Icon Button Ghost with Icon/Close",
+          "rule": "shown when Show Close = true"
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Login / Desktop",
+      "status": "built 2026-09-30 in the Design file \"NEW PROJECT Design File\" (page Auth), approved 2026-09-30",
+      "tier": "Pattern",
+      "size": "1440x900",
+      "uses": [
+        "Input / Text (Label Work email, Leading Icon Icon/Mail)",
+        "Input / Password (Leading Icon Icon/Lock, eye Icon Button)",
+        "Checkbox (Keep me signed in)",
+        "Button Type=Link Size=sm (Forgot password?, Ask your clinic admin for an invite)",
+        "Button Type=Filled Size=lg (Sign in, full width)",
+        "Button Type=Outline Size=lg (Sign in with a phone code, Leading Icon Icon/Phone)",
+        "Icon/Heart Pulse (logo)"
+      ],
+      "screenshot": "Screens/login-desktop-dark.png",
+      "template": "screen-templates.json > sign_in"
+    },
+    {
+      "name": "Login / Mobile",
+      "status": "built 2026-09-30 in the Design file \"NEW PROJECT Design File\" (page Auth), approved 2026-09-30",
+      "tier": "Pattern",
+      "size": "375x812 (Typography and Spacing modes: Mobile)",
+      "uses": [
+        "Input / Text (Label Work email, Leading Icon Icon/Mail)",
+        "Input / Password (Leading Icon Icon/Lock, eye Icon Button)",
+        "Checkbox (Keep me signed in)",
+        "Button Type=Link Size=sm (Forgot password?, Ask your clinic admin for an invite)",
+        "Button Type=Filled Size=lg (Sign in, full width)",
+        "Button Type=Outline Size=lg (Sign in with a phone code, Leading Icon Icon/Phone)",
+        "Icon/Heart Pulse (logo)"
+      ],
+      "screenshot": "Screens/login-mobile-dark.png",
+      "template": "screen-templates.json > sign_in"
+    }
+  ],
+  "icons": {
+    "page": "➜ Icons",
+    "set": "Lucide",
+    "naming": "Icon/<Title Case Name>",
+    "size": 24,
+    "stroke": 2,
+    "color": "Glyph stroke bound to color/icon/default",
+    "names": [
+      "Chevron Down",
+      "Chevron Up",
+      "Chevron Left",
+      "Chevron Right",
+      "Arrow Left",
+      "Arrow Right",
+      "Close",
+      "Check",
+      "Add",
+      "Minus",
+      "Search",
+      "Info",
+      "Alert Circle",
+      "Warning",
+      "Check Circle",
+      "Eye",
+      "Eye Off",
+      "Edit",
+      "Delete",
+      "Upload",
+      "File",
+      "User",
+      "Calendar",
+      "Clock",
+      "Stethoscope",
+      "Heart Pulse",
+      "Pill",
+      "Bell",
+      "Settings",
+      "Home",
+      "Log Out",
+      "Menu",
+      "Filter",
+      "More Horizontal",
+      "Mail",
+      "Phone",
+      "Loader",
+      "Lock",
+      "File Text",
+      "Users"
+    ]
+  },
+  "text_styles": {
+    "count": 40,
+    "naming": "{size}/{weight}",
+    "sizes": [
+      "xs",
+      "sm",
+      "base",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl",
+      "4xl",
+      "5xl",
+      "6xl"
+    ],
+    "weights": [
+      "Regular",
+      "Medium",
+      "Semi Bold",
+      "Bold"
+    ],
+    "font": "Poppins",
+    "bound": [
+      "fontFamily",
+      "fontStyle",
+      "fontSize",
+      "lineHeight",
+      "letterSpacing"
+    ]
+  },
+  "effect_styles": [
+    "shadow-2xs",
+    "shadow-xs",
+    "shadow-sm",
+    "shadow-md",
+    "shadow-lg",
+    "shadow-xl",
+    "shadow-2xl",
+    "inset-shadow-2xs",
+    "inset-shadow-xs",
+    "inset-shadow-sm",
+    "focus-ring",
+    "focus-ring-offset"
+  ],
+  "grid_styles": [
+    "Grid/Desktop 1440",
+    "Grid/iPad 768",
+    "Grid/Mobile 375"
+  ],
+  "out_of_scope_v1": [
+    "Input / URL",
+    "Input / Card Number",
+    "Avatar Upload",
+    "Avatar Type=Photo",
+    "➜ Favicon page"
+  ],
+  "gaps": "See Foundation_Skill/references/gaps.md and Component_Skills/*/references/gaps.md",
+  "slots": {
+    "kinds": {
+      "instance_swap": "swap the nested instance with setProperties({<prop>: componentId}); never detach",
+      "slot": "Figma slot: place the listed components inside; never draw content",
+      "fixed_nested": "nested instance with no swap property; set it through the nested (often exposed) instance, never detach",
+      "text_glyph": "icon drawn as a text character (a gap; none known in ClinicSoft)"
+    },
+    "rule": "Screens and Storybook controls must use these slots exactly. A needed swap that is missing is a component fix, not a reason to detach."
+  }
+}

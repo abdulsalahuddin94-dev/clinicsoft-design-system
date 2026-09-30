@@ -1,0 +1,5 @@
+{
+  "note": "Figma node ids of each component set / component in the ClinicSoft DS file, read 2026-09-30 with a read-only figma_execute (Desktop Bridge). Valid in this file only; re-export after duplicating the file.",
+  "file": "https://www.figma.com/design/m0G6wKSbVhgqWutfmt7vFU/NEW-PROJECT-Design-system",
+  "components": {"OTP / Cell":"7:3274","Input / Text":"7:3394","Input / Password":"7:3548","Input / Date":"7:3688","Input / Phone":"7:3828","Search":"7:3937","Upload Field":"7:4013","OTP / Field":"7:4065","Stepper":"7:4121","Select / Dropdown":"9:4673","Text Area":"7:3883","Checkbox":"5:2781","Toggle":"5:2869","Radio":"5:2833","Button":"4:2308","Icon Button":"5:2712","Tabs / Item":"6:3162","Pagination / Item":"6:3176","Breadcrumb / Item":"6:3196","Tabs / Bar":"8:4325","Pagination":"8:4329","Breadcrumb":"8:4354","Sidebar / Item":"8:4450","Sidebar":"8:4454","Top Bar":"8:4569","Menu / Item":"7:3260","Menu":"8:4370","Avatar":"5:3023","Tooltip":"6:3098","Badge":"5:2921","Alert":"8:4196","Toast":"8:4271","Modal":"9:4751"}
+}

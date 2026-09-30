@@ -1,0 +1,1246 @@
+{
+ "source": "figma_execute read of NEW PROJECT Design system (m0G6wKSbVhgqWutfmt7vFU), 2026-09-30",
+ "components": [
+  {
+   "name": "OTP / Cell",
+   "type": "COMPONENT_SET",
+   "key": "a4e9c0991d17afc4ce54125066dc2823b6be0bde",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Atom. Purpose: one digit box of a one-time code (patient login, prescription pickup verification).\nUsage rules: used only inside OTP / Field (4 or 6 cells); Filled once a digit is typed; Error on the whole row when the code is wrong; Focus moves to the next cell automatically in code.\nAccessibility: 48x56 cells; border color/border/input (3.7:1), Focus 2px color/border/focus; the field supports paste and one-time-code autofill in code.",
+   "properties": {
+    "Digit": {
+     "type": "TEXT",
+     "default": "4"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Focus",
+      "Filled",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Success"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Input / Text",
+   "type": "COMPONENT_SET",
+   "key": "0dcf62ee62dbb6d749a1aad4656db5bd207c13d4",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Molecule (Label, Hint, field with Icon atoms, Message). Purpose: free text such as names, addresses and notes on one line.\nUsage rules: always show a Label; Hint sits between the label and the field and explains the format; the Message row below the field shows helper text, or the error/success message in those states; use Show Optional instead of asterisks for optional fields; Filled shows a value, Default shows the placeholder (never use the placeholder as the label).\nAccessibility: field 40px high, border color/border/input (3.7:1 on bg/secondary), Focus 2px color/border/focus; placeholder color/text/placeholder (7:1); errors use icon + text, never color alone; label is linked to the field (for/id) and the message with aria-describedby in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Full name"
+    },
+    "Show Optional": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Info": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Hint": {
+     "type": "TEXT",
+     "default": "As written on the ID card"
+    },
+    "Show Hint": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Helper text"
+    },
+    "Show Message": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Leading Icon": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Leading Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/User"
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "Patient full name"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "Amira Saleh"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Enter the name as it appears on the ID"
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Looks good"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Error",
+      "Success",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Input / Password",
+   "type": "COMPONENT_SET",
+   "key": "5051abd50c20129f51ec27a5348ac22893e02736",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Molecule (Label, Hint, field with Icon atoms, Icon Button atom, Message). Purpose: passwords; the eye Icon Button shows or hides the value.\nUsage rules: always show a Label; Hint sits between the label and the field and explains the format; the Message row below the field shows helper text, or the error/success message in those states; use Show Optional instead of asterisks for optional fields; Filled shows a value, Default shows the placeholder (never use the placeholder as the label).\nAccessibility: field 40px high, border color/border/input (3.7:1 on bg/secondary), Focus 2px color/border/focus; placeholder color/text/placeholder (7:1); errors use icon + text, never color alone; label is linked to the field (for/id) and the message with aria-describedby in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Password"
+    },
+    "Show Optional": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Info": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Hint": {
+     "type": "TEXT",
+     "default": "As written on the ID card"
+    },
+    "Show Hint": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Helper text"
+    },
+    "Show Message": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Leading Icon": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Leading Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Lock"
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "Enter password"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "••••••••"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Use at least 8 characters with a number"
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Looks good"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Error",
+      "Success",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Input / Date",
+   "type": "COMPONENT_SET",
+   "key": "92f9d0202235ee476ae23d6bd3a0c70744ff2548",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Molecule (Label, Hint, field with Icon atoms, Message). Purpose: dates such as date of birth or visit date; the calendar icon opens a date picker in code.\nUsage rules: always show a Label; Hint sits between the label and the field and explains the format; the Message row below the field shows helper text, or the error/success message in those states; use Show Optional instead of asterisks for optional fields; Filled shows a value, Default shows the placeholder (never use the placeholder as the label).\nAccessibility: field 40px high, border color/border/input (3.7:1 on bg/secondary), Focus 2px color/border/focus; placeholder color/text/placeholder (7:1); errors use icon + text, never color alone; label is linked to the field (for/id) and the message with aria-describedby in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Date of birth"
+    },
+    "Show Optional": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Info": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Hint": {
+     "type": "TEXT",
+     "default": "As written on the ID card"
+    },
+    "Show Hint": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Helper text"
+    },
+    "Show Message": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "DD/MM/YYYY"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "12/03/2026"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Enter a date in DD/MM/YYYY format"
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Looks good"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Error",
+      "Success",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Input / Phone",
+   "type": "COMPONENT_SET",
+   "key": "07971f655f1b51ce1078d14d685fdabf6ac3d871",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Molecule (Label, Hint, field with Icon atoms, Message). Purpose: phone numbers with a country code prefix (default +971).\nUsage rules: always show a Label; Hint sits between the label and the field and explains the format; the Message row below the field shows helper text, or the error/success message in those states; use Show Optional instead of asterisks for optional fields; Filled shows a value, Default shows the placeholder (never use the placeholder as the label).\nAccessibility: field 40px high, border color/border/input (3.7:1 on bg/secondary), Focus 2px color/border/focus; placeholder color/text/placeholder (7:1); errors use icon + text, never color alone; label is linked to the field (for/id) and the message with aria-describedby in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Phone number"
+    },
+    "Show Optional": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Info": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Hint": {
+     "type": "TEXT",
+     "default": "As written on the ID card"
+    },
+    "Show Hint": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Helper text"
+    },
+    "Show Message": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Leading Icon": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Leading Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Phone"
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "50 123 4567"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "50 123 4567"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Enter a valid mobile number"
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Looks good"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Error",
+      "Success",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Search",
+   "type": "COMPONENT_SET",
+   "key": "41638e4fec8346ece8fddc1c54e7367c1c2fe4e6",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 5,
+   "description": "Molecule (Search Icon, text, Clear Icon Button). Purpose: find records on the current screen or across the app (patients, appointments, files).\nUsage rules: placeholder says what can be searched; Clear appears only when there is text (Filled); results update as the user types or on Enter; do not use Search as a data-entry field.\nAccessibility: 40px high, pill shape; border color/border/input (3.7:1); Clear Icon Button needs aria-label \"Clear search\"; role=\"search\" on the container in code.",
+   "properties": {
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "Search patients, doctors, files"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Upload Field",
+   "type": "COMPONENT_SET",
+   "key": "0626ffa9ed7695a84540f1f7d70bcfdc9fa10787",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 7,
+   "description": "Molecule (Upload Icon, Button atom, Icon Button atom, progress). Purpose: attach files to a record (lab reports, referral letters, ID scans).\nUsage rules: say the allowed formats and size in the zone; Hover is the drag-over state; Uploading shows progress and a cancel Icon Button; Uploaded shows the file with a remove Icon Button; Error explains what to fix. One field per document type.\nAccessibility: the Browse Button is the keyboard path (drag and drop is optional); dashed border color/border/input (3.7:1); progress is announced in code; remove/cancel Icon Buttons need aria-labels.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Lab report"
+    },
+    "Format Hint": {
+     "type": "TEXT",
+     "default": "PDF, JPG or PNG, up to 10 MB"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "This file is larger than 10 MB"
+    },
+    "File Name": {
+     "type": "TEXT",
+     "default": "blood-test-march.pdf"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Uploading",
+      "Uploaded",
+      "Error",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "OTP / Field",
+   "type": "COMPONENT_SET",
+   "key": "ec3337297a63a40d01ee8a73ccea7456146c3761",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 5,
+   "description": "Molecule (6 OTP / Cell atoms, label, message). Purpose: enter a one-time code (patient login, prescription pickup).\nUsage rules: 6 cells by default (hide cells 5-6 for 4-digit codes); Default has focus on the first empty cell; Error marks every cell and explains what to do; offer \"Resend code\" with a Link Button below in screens.\nAccessibility: supports paste and autocomplete=\"one-time-code\" in code; each cell 48x56; errors in text, not color alone.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Verification code"
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Sent to +971 50 ••• 4567"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "The code is incorrect. Try again."
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Code verified"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Filled",
+      "Error",
+      "Disabled",
+      "Success"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Stepper",
+   "type": "COMPONENT_SET",
+   "key": "8511dd64656021bdaa8832b79f2445021ecab59c",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 4,
+   "description": "Molecule (2 Icon Button atoms + value box). Purpose: change a small whole number (tablets per dose, refills, number of guests).\nUsage rules: use for ranges up to about 20; Min and Max disable the button that would leave the range; for larger or free numbers use Input / Text with a number keyboard.\nAccessibility: 40x40 buttons with aria-labels (\"Decrease\", \"Increase\"); value is announced (role=\"spinbutton\" with aria-valuemin/max in code).",
+   "properties": {
+    "Value": {
+     "type": "TEXT",
+     "default": "2"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Min",
+      "Max",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Select / Dropdown",
+   "type": "COMPONENT_SET",
+   "key": "789a7c612309c8b4947d1d11c6790984c99b1e55",
+   "page": "➜ Input Fields and Dropdown",
+   "variants": 8,
+   "description": "Organism (field, Icon, Menu molecule with Menu / Item atoms, exposed). Purpose: pick one value from a list of 5 or more (doctor, clinic branch, insurance provider, specialty).\nUsage rules: use Radio for 2 to 5 visible options; placeholder says what to choose; Open shows the Menu with the current value Selected (check icon); add Search at the top of the menu in code when the list is long; Error explains what is missing.\nAccessibility: 40px field, border color/border/input (3.7:1), Focus 2px color/border/focus; role=\"combobox\"/\"listbox\" with arrow keys, Enter and Escape in code; selected option marked with a check, not color only.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Doctor"
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "Choose a doctor"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "Dr. Dana Khalil"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Choose a doctor to continue"
+    },
+    "Open": {
+     "type": "VARIANT",
+     "default": "False",
+     "options": [
+      "False",
+      "True"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Filled",
+      "Error",
+      "Disabled",
+      "Focus",
+      "Success"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Text Area",
+   "type": "COMPONENT_SET",
+   "key": "728145f71cbad351a1d2b51dcb8c8ab8bb866957",
+   "page": "➜ Text Area",
+   "variants": 7,
+   "description": "Molecule (Label, field, Message and Character Count). Purpose: multi-line text such as visit notes, symptoms, referral reasons.\nUsage rules: use when the answer can be longer than one line; show the character count when there is a limit; the message row shows helper text or the error; keep the label short.\nAccessibility: border color/border/input (3.7:1), Focus 2px color/border/focus; min height 120px; errors use text, not color alone; the count is announced politely in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Visit notes"
+    },
+    "Show Character Count": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Show Message": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Placeholder": {
+     "type": "TEXT",
+     "default": "Write clinical notes…"
+    },
+    "Value": {
+     "type": "TEXT",
+     "default": "Patient reports mild headache for three days. No fever."
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Visible to the care team"
+    },
+    "Error Message": {
+     "type": "TEXT",
+     "default": "Notes are required for this visit"
+    },
+    "Success Message": {
+     "type": "TEXT",
+     "default": "Notes saved"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Filled",
+      "Error",
+      "Disabled",
+      "Success"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Checkbox",
+   "type": "COMPONENT_SET",
+   "key": "5289c098c48398744f9e70ed53c1ba2b8198afbd",
+   "page": "➜ Checkboxes",
+   "variants": 15,
+   "description": "Atom. Purpose: select one or more independent options (consent, filters, \"send reminder by SMS\").\nUsage rules: use for multi-select and single on/off choices that take effect on submit; use Indeterminate only on a parent whose children are partly selected; use Error when a required box (e.g. consent) is not checked, with the message shown by the form. For an immediate on/off setting use Toggle; for one choice out of several use Radio.\nAccessibility: box 20px, whole row (box + label) is the click target (min 24px high); unchecked border color/border/input (3.7:1); Focus shows focus-ring-offset on the box; label is required unless the context labels it.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Label"
+    },
+    "Show Label": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Checked": {
+     "type": "VARIANT",
+     "default": "Unchecked",
+     "options": [
+      "Unchecked",
+      "Checked",
+      "Indeterminate"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Error",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Toggle",
+   "type": "COMPONENT_SET",
+   "key": "fe2cd35bfb9b0e0aefa9922925e8cabd630f8a2d",
+   "page": "➜ Toggles",
+   "variants": 8,
+   "description": "Atom. Purpose: switch a setting on or off with immediate effect (appointment reminders, show cancelled visits).\nUsage rules: the change applies at once, no Save button; the label names the setting (\"Email reminders\"), not the action; for choices submitted with a form use Checkbox.\nAccessibility: track 44x24 with a 16px knob; the Off track has a color/border/input border (3.7:1) so it is visible on dark; state is shown by knob position and color, never color alone; Focus shows focus-ring-offset; role=\"switch\" in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Label"
+    },
+    "Show Label": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Value": {
+     "type": "VARIANT",
+     "default": "Off",
+     "options": [
+      "Off",
+      "On"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Radio",
+   "type": "COMPONENT_SET",
+   "key": "a0c6d209dab13a5774b62123664c3192f705f4e9",
+   "page": "➜ Radio Buttons",
+   "variants": 10,
+   "description": "Atom. Purpose: choose exactly one option from a short list (visit type: In person / Video; payment method).\nUsage rules: always in a group of 2 to 6 options with one pre-selected when a safe default exists; more than 6 options -> Select / Dropdown; independent choices -> Checkbox; instant on/off -> Toggle. Error marks a required group with no choice.\nAccessibility: circle 20px, the whole row is the click target (min 24px high); unselected border color/border/input (3.7:1); arrow keys move within the group in code; Focus shows focus-ring-offset.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Label"
+    },
+    "Show Label": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Selected": {
+     "type": "VARIANT",
+     "default": "Off",
+     "options": [
+      "Off",
+      "On"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Focus",
+      "Error",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Button",
+   "type": "COMPONENT_SET",
+   "key": "8fe908b6283cfad65ecf4734b279f347ac31a572",
+   "page": "➜ Buttons & Links",
+   "variants": 150,
+   "description": "Atom. Purpose: triggers an action (save, book, submit) or, as Type=Link, a light inline action.\nUsage rules: one Filled (or Pill) button per view for the main action; Outline for secondary actions; Link for low-emphasis inline actions; Danger only for destructive actions (delete patient record, cancel appointment) and always behind a confirmation. Use Loading while the action runs and keep the label. Do not use a Button to navigate between pages (use Link text or navigation components) and never use Danger for non-destructive actions.\nAccessibility: minimum size 32px (xs) and 40px (base) for primary actions; label text on filled green is color/action/primary/text (gray/950, 5.6:1); Focus shows the focus-ring-offset effect; Disabled uses opacity/disabled and must not be the only way to explain why an action is unavailable.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Button"
+    },
+    "Show Leading Icon": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Trailing Icon": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Leading Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Add"
+    },
+    "Trailing Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Arrow Right"
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Filled",
+     "options": [
+      "Filled",
+      "Pill",
+      "Outline",
+      "Link",
+      "Danger"
+     ]
+    },
+    "Size": {
+     "type": "VARIANT",
+     "default": "xs",
+     "options": [
+      "xs",
+      "sm",
+      "base",
+      "lg",
+      "xl"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Focus",
+      "Disabled",
+      "Loading"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Icon Button",
+   "type": "COMPONENT_SET",
+   "key": "b35ddaf333aca0a5024bf09fa5667e6917902d43",
+   "page": "➜ Buttons & Links",
+   "variants": 100,
+   "description": "Atom. Purpose: an action shown only as an icon (edit, delete, more, close, settings) where space is tight, e.g. table rows and toolbars.\nUsage rules: use only for actions whose icon is universally understood; add a Tooltip with the action name; Filled for the main action in a toolbar, Outline or Ghost for the rest, Danger for destructive actions behind a confirmation. Do not use for primary page actions (use Button with a label).\nAccessibility: minimum 32x32 (xs), 40x40 recommended; icon color on filled green is color/icon/inverse; needs an accessible name (aria-label) in code; Focus shows focus-ring-offset; Disabled uses opacity/disabled.",
+   "properties": {
+    "Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Settings"
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Filled",
+     "options": [
+      "Filled",
+      "Outline",
+      "Ghost",
+      "Danger"
+     ]
+    },
+    "Size": {
+     "type": "VARIANT",
+     "default": "xs",
+     "options": [
+      "xs",
+      "sm",
+      "base",
+      "lg",
+      "xl"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Tabs / Item",
+   "type": "COMPONENT_SET",
+   "key": "f0cd691a511287435c5a0a23e4de57043db8e3cb",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 10,
+   "description": "Atom. Purpose: one tab that switches between views of the same page (Patient: Overview / Visits / Prescriptions / Files).\nUsage rules: use inside Tabs / Bar only; Underline for page-level sections, Segmented for compact view switches (Day / Week / Month); exactly one Selected per bar; 2 to 7 tabs; labels are one or two words. To move to another page use navigation (Sidebar, Breadcrumb), not tabs.\nAccessibility: 40px high; selected tab has a 2px color/border/brand underline plus semibold text, so the state is not color only; role=\"tab\" with arrow key navigation in code; Focus shows focus-ring-offset.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Appointments"
+    },
+    "Show Icon": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Calendar"
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Underline",
+     "options": [
+      "Underline",
+      "Segmented"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Selected",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Pagination / Item",
+   "type": "COMPONENT_SET",
+   "key": "871de3332b5492776a3f4e83a03df2ead9390ac0",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 5,
+   "description": "Atom. Purpose: one page number in a Pagination bar (patient lists, invoices, lab results).\nUsage rules: used only inside Pagination; Current marks the page shown; use \"…\" text in a Default item for skipped ranges; previous/next are Icon Buttons (Ghost) in the Pagination molecule.\nAccessibility: 40x40 target; Current uses bg/brand with text/on-brand (5.6:1) and aria-current=\"page\" in code; Focus shows focus-ring-offset.",
+   "properties": {
+    "Page": {
+     "type": "TEXT",
+     "default": "1"
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Current",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Breadcrumb / Item",
+   "type": "COMPONENT_SET",
+   "key": "9465375403bd050a3e3d2a33e3d6c963a4cccfc3",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 5,
+   "description": "Atom. Purpose: one level of the page path (Patients > Amira Saleh > Visit 12 Mar).\nUsage rules: only inside Breadcrumb; every level except the last is a link; the last is Current with Show Separator off; keep labels short (truncate names in code).\nAccessibility: links use color/text/link (brand/400, 9:1 on bg/primary); Current has aria-current=\"page\"; separators are decorative (aria-hidden) in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Patients"
+    },
+    "Show Separator": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Current",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Tabs / Bar",
+   "type": "COMPONENT_SET",
+   "key": "afb2626e0472380abc027219a7d5789a4ed79654",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 2,
+   "description": "Molecule (4 Tabs / Item atoms, exposed). Purpose: switch between sections of one page (patient Overview / Visits / Prescriptions / Files) or between views (Day / Week / Month).\nUsage rules: Underline for page sections, Segmented for compact view switches; exactly one tab Selected; 2 to 7 tabs, hide extra Tab instances rather than detaching; set each tab through its exposed properties.\nAccessibility: role=\"tablist\" with arrow-key navigation in code; the selected tab is marked by weight + underline/fill, not color only.",
+   "properties": {
+    "Type": {
+     "type": "VARIANT",
+     "default": "Underline",
+     "options": [
+      "Underline",
+      "Segmented"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Pagination",
+   "type": "COMPONENT",
+   "key": "dbaf019b4c14490d42f2d5996de622377c60fb85",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 1,
+   "description": "Molecule (Pagination / Item atoms, 2 Icon Button atoms). Purpose: move between pages of long lists (patients, invoices, lab results).\nUsage rules: show first, last, current and neighbours with \"…\" for gaps; Previous/Next disable at the ends (swap to the Disabled Icon Button variant); keep the result summary so users know the list size; for feeds use \"Load more\" instead.\nAccessibility: nav element with aria-label=\"Pagination\"; current page aria-current=\"page\"; 40px targets.",
+   "properties": {
+    "Show Summary": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Summary": {
+     "type": "TEXT",
+     "default": "Showing 11-20 of 118 patients"
+    }
+   }
+  },
+  {
+   "name": "Breadcrumb",
+   "type": "COMPONENT",
+   "key": "4c4fd0ca24f704a50d35cb7f73996cb8361cdc29",
+   "page": "➜ Pagination, Tabs & Breadcrumb",
+   "variants": 1,
+   "description": "Molecule (Breadcrumb / Item atoms, exposed). Purpose: show where the page sits and link back to parent pages (Patients > Amira Saleh > Visit 12 Mar).\nUsage rules: use on pages two or more levels deep; the last level is Current without a separator; hide middle levels on mobile; never use it as the main navigation.\nAccessibility: nav with aria-label=\"Breadcrumb\"; links 9:1 on bg/primary; last item aria-current=\"page\".",
+   "properties": {}
+  },
+  {
+   "name": "Sidebar / Item",
+   "type": "COMPONENT_SET",
+   "key": "c8fb5298b2b5043b9ba3f213ae34131c5881fda0",
+   "page": "➜ Navigation Bars",
+   "variants": 5,
+   "description": "Molecule (Icon, label and Badge atom). Purpose: one destination in the Sidebar (Dashboard, Appointments, Patients, Billing, Settings).\nUsage rules: used inside Sidebar only; exactly one Selected (the current section); Show Count for pending items (e.g. new lab results); labels are nouns.\nAccessibility: 40px rows; Selected = bg/subtle + semibold + brand icon, not color only; aria-current=\"page\" in code; Focus shows the inset focus-ring.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Appointments"
+    },
+    "Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Calendar"
+    },
+    "Show Count": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Selected",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Sidebar",
+   "type": "COMPONENT",
+   "key": "ffc88101f9150ada0c96730be7b2f95236f8838d",
+   "page": "➜ Navigation Bars",
+   "variants": 1,
+   "description": "Organism (Sidebar / Item molecules, exposed). Purpose: main navigation of the ClinicSoft web app on desktop and iPad.\nUsage rules: 264px wide, full screen height, left side; one Sidebar / Item Selected for the current section; up to 8 main items, Settings and Log Out pinned at the bottom; collapse to a menu Icon Button in the Top Bar on mobile. Set each item through its exposed properties.\nAccessibility: nav landmark with aria-label=\"Main\"; current item aria-current=\"page\"; keyboard order top to bottom.",
+   "properties": {}
+  },
+  {
+   "name": "Top Bar",
+   "type": "COMPONENT",
+   "key": "22d9fe03c5d5726f1400bee4151bf14140fbbfcb",
+   "page": "➜ Navigation Bars",
+   "variants": 1,
+   "description": "Organism (Search molecule, Icon Button, Button and Avatar atoms). Purpose: the header of every app page next to the Sidebar: page title, search, notifications, the page's main action and the signed-in user.\nUsage rules: 64px high, fills the content width (1440 - 264 sidebar = 1176 on desktop); one Primary Action at most (it is the page's Filled button); hide Search on pages without searchable content; on mobile the title shrinks and a menu Icon Button opens the Sidebar.\nAccessibility: header landmark; Notifications Icon Button needs aria-label and an unread count in text; tab order: title, search, notifications, action, avatar menu.",
+   "properties": {
+    "Page Title": {
+     "type": "TEXT",
+     "default": "Appointments"
+    },
+    "Show Primary Action": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Show Search": {
+     "type": "BOOLEAN",
+     "default": true
+    }
+   }
+  },
+  {
+   "name": "Menu / Item",
+   "type": "COMPONENT_SET",
+   "key": "a683cec3343be4821171bfd4e7ea4ff8c1c93e05",
+   "page": "➜ Menus",
+   "variants": 10,
+   "description": "Atom. Purpose: one option in a Menu or Select dropdown (row actions: Edit, Reschedule, Delete; select options: doctor names, clinics).\nUsage rules: used inside Menu or Select only; Selected shows a check for the current value in a Select; Danger for destructive actions, placed last and separated; labels start with a verb for actions.\nAccessibility: 40px high rows; Selected is shown by a check icon and semibold text, not color only; Focus shows the inset focus-ring; role=\"menuitem\"/\"option\" in code.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Edit appointment"
+    },
+    "Show Leading Icon": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Leading Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Edit"
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Danger"
+     ]
+    },
+    "State": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Hover",
+      "Selected",
+      "Focus",
+      "Disabled"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Menu",
+   "type": "COMPONENT",
+   "key": "a2f947861554014f6cd00828b1999f618d3a1aee",
+   "page": "➜ Menus",
+   "variants": 1,
+   "description": "Molecule (Menu / Item atoms, exposed). Purpose: a short list of actions opened from a button or row (row actions in the appointments table, \"More\" menus).\nUsage rules: 2 to 8 items; destructive items last, after a divider, as Type=Danger; hide unused items instead of detaching; for picking a value use Select / Dropdown.\nAccessibility: role=\"menu\" with arrow-key navigation in code; closes on Escape and returns focus to the trigger; 40px rows.",
+   "properties": {}
+  },
+  {
+   "name": "Avatar",
+   "type": "COMPONENT_SET",
+   "key": "3a576e99050d8deef2388d4bf8dfa9ba6b2cbe20",
+   "page": "➜ Avatars & Upload Image",
+   "variants": 10,
+   "description": "Atom. Purpose: identify a person (patient, doctor, staff) in lists, headers, appointments and comments.\nUsage rules: Initials (first + last name, 2 letters) when there is no photo; Icon for unknown or anonymous people; sizes 24 (dense tables), 32 (lists), 40 (headers), 60 (profile cards), 100 (profile page). Show Status for online / available doctors only. A Photo type (image fill) is still to add, see gaps.\nAccessibility: initials text on bg/brand uses color/text/on-brand (5.6:1); in code the avatar needs the person's name as alt text; the status dot must also be described in text (\"Available\").",
+   "properties": {
+    "Initials": {
+     "type": "TEXT",
+     "default": "AS"
+    },
+    "Show Status": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Initials",
+     "options": [
+      "Initials",
+      "Icon"
+     ]
+    },
+    "Size": {
+     "type": "VARIANT",
+     "default": "24",
+     "options": [
+      "24",
+      "32",
+      "40",
+      "60",
+      "100"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Tooltip",
+   "type": "COMPONENT_SET",
+   "key": "8e32de3a9da0c21c690465b0ab027a856e594400",
+   "page": "➜ Tooltips",
+   "variants": 8,
+   "description": "Atom. Purpose: a short hint on hover or focus (name of an Icon Button, meaning of a status, preparation note for a lab test).\nUsage rules: Small = one line naming an action or value; Large = title + up to two sentences. Never put links, buttons or required information only in a tooltip; the arrow points at the trigger. Light surface (bg/inverse) so it stands out on the dark UI.\nAccessibility: text/inverse on bg/inverse is above 15:1; shows on hover and keyboard focus, hides on Escape; trigger references it with aria-describedby in code.",
+   "properties": {
+    "Text": {
+     "type": "TEXT",
+     "default": "Edit appointment"
+    },
+    "Title": {
+     "type": "TEXT",
+     "default": "Fasting required"
+    },
+    "Arrow": {
+     "type": "VARIANT",
+     "default": "Up",
+     "options": [
+      "Up",
+      "Down",
+      "Left",
+      "Right"
+     ]
+    },
+    "Size": {
+     "type": "VARIANT",
+     "default": "Small",
+     "options": [
+      "Small",
+      "Large"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Badge",
+   "type": "COMPONENT_SET",
+   "key": "ed5e385d98bdbac867e51a40166bf38b5012e678",
+   "page": "➜ Banners, Badges & Toasts",
+   "variants": 10,
+   "description": "Atom. Purpose: short status label on a record (appointment Confirmed / Pending / Cancelled, lab result New, invoice Draft).\nUsage rules: one or two words; status color matches meaning (Success confirmed/paid, Warning pending/needs review, Error cancelled/overdue, Info new/informational, Neutral draft/archived); never use a Badge as a button; do not use brand/button tokens for status. Show Icon when the badge must be readable without color.\nAccessibility: status text on its status background is at least 4.5:1 (e.g. text/success on bg/success); sm is 20px high, md 24px; meaning must also be in the text, never color alone.",
+   "properties": {
+    "Label": {
+     "type": "TEXT",
+     "default": "Confirmed"
+    },
+    "Show Icon": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Icon": {
+     "type": "INSTANCE_SWAP",
+     "default": "Icon/Info"
+    },
+    "Status": {
+     "type": "VARIANT",
+     "default": "Info",
+     "options": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error",
+      "Neutral"
+     ]
+    },
+    "Size": {
+     "type": "VARIANT",
+     "default": "sm",
+     "options": [
+      "sm",
+      "md"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Alert",
+   "type": "COMPONENT_SET",
+   "key": "7378a940add82d9eeeceb523d0c0d6bbb4094135",
+   "page": "➜ Banners, Badges & Toasts",
+   "variants": 4,
+   "description": "Molecule (Icon, text, Button Link atom, Icon Button atom). Purpose: an inline message inside a page or form that stays until resolved (expiring insurance, missing consent, failed sync).\nUsage rules: place above the content it refers to; Status matches meaning; Title states the fact, Message says what to do; Show Action for one follow-up link; Show Close only when the message can be dismissed. Status components use status tokens, never button tokens.\nAccessibility: status text on its status background is at least 4.5:1; icon + title carry the meaning, not color; role=\"status\" (or \"alert\" for Error) in code.",
+   "properties": {
+    "Title": {
+     "type": "TEXT",
+     "default": "New lab results are available"
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "Two results were added to the patient record."
+    },
+    "Show Action": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Close": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Status": {
+     "type": "VARIANT",
+     "default": "Info",
+     "options": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Toast",
+   "type": "COMPONENT_SET",
+   "key": "983f913b9a430b63df3a0762e467a51b993c3f3f",
+   "page": "➜ Banners, Badges & Toasts",
+   "variants": 4,
+   "description": "Molecule (Icon, text, Button Link atom, Icon Button atom). Purpose: a short, temporary confirmation or error after an action (appointment saved, message sent, upload failed).\nUsage rules: bottom-right on desktop, top on mobile; auto-hide after 5 s except Error; one toast at a time; Show Action for Undo or View; never use a toast for information the user must act on (use Alert or a Modal).\nAccessibility: raised surface bg/subtle with shadow-lg; text/primary 13:1; announced with role=\"status\" (Error: role=\"alert\") in code; Close Icon Button has aria-label.",
+   "properties": {
+    "Title": {
+     "type": "TEXT",
+     "default": "Appointment confirmed"
+    },
+    "Message": {
+     "type": "TEXT",
+     "default": "A confirmation was sent to the patient by SMS."
+    },
+    "Show Action": {
+     "type": "BOOLEAN",
+     "default": false
+    },
+    "Show Close": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Status": {
+     "type": "VARIANT",
+     "default": "Info",
+     "options": [
+      "Info",
+      "Success",
+      "Warning",
+      "Error"
+     ]
+    }
+   }
+  },
+  {
+   "name": "Modal",
+   "type": "COMPONENT_SET",
+   "key": "2c3d654f4543ab36c697f2368f1e964ea2411adb",
+   "page": "➜ Popups",
+   "variants": 2,
+   "description": "Organism (Icon Button, Button atoms, Input / Date and Select / Dropdown in the content slot, exposed actions). Purpose: a focused task or confirmation over the page (reschedule a visit, confirm cancelling an appointment, delete a record).\nUsage rules: Default for short tasks with a few fields; Danger to confirm destructive actions, with the consequence in the body and a Danger primary button that names the action; buttons right-aligned, secondary first; put forms longer than 5 fields on a page instead; show over the scrim color/bg/overlay.\nAccessibility: 480px wide, radius/2xl, shadow-xl; focus moves into the modal and is trapped, Escape and Close dismiss (not for Danger in progress); title is the accessible name (aria-labelledby); body text color/text/secondary 11:1.",
+   "properties": {
+    "Title": {
+     "type": "TEXT",
+     "default": "Reschedule appointment"
+    },
+    "Body": {
+     "type": "TEXT",
+     "default": "Choose a new date and time. The patient will get an SMS with the new details."
+    },
+    "Show Content": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Show Close": {
+     "type": "BOOLEAN",
+     "default": true
+    },
+    "Type": {
+     "type": "VARIANT",
+     "default": "Default",
+     "options": [
+      "Default",
+      "Danger"
+     ]
+    }
+   }
+  }
+ ]
+}

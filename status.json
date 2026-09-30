@@ -1,0 +1,26 @@
+{
+  "project": "ClinicSoft",
+  "has_storybook": true,
+  "last_change": "2026-09-30",
+  "unsynced_entries": 0,
+  "unsynced_since": null,
+  "last_storybook_sync": "2026-09-30",
+  "figma": {
+    "design_system": {
+      "name": "NEW PROJECT Design system (to be renamed ClinicSoft Design System)",
+      "url": "https://www.figma.com/design/m0G6wKSbVhgqWutfmt7vFU",
+      "file_key": "m0G6wKSbVhgqWutfmt7vFU",
+      "last_publish": "2026-09-30"
+    },
+    "design_files": [
+      {
+        "name": "NEW PROJECT Design File",
+        "url": "https://www.figma.com/design/7ZCVrtHY1pw7yMeKPL6A7O/NEW-PROJECT-Design-File",
+        "file_key": "7ZCVrtHY1pw7yMeKPL6A7O",
+        "role": "screens",
+        "library_enabled": true,
+        "library_updates_accepted": true
+      }
+    ]
+  }
+}

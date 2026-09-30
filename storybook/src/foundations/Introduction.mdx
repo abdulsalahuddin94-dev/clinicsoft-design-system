@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# ClinicSoft - Web Design System
+
+Living documentation of the Figma file [NEW PROJECT Design system](https://www.figma.com/design/m0G6wKSbVhgqWutfmt7vFU) (to be renamed "ClinicSoft Design System"). Figma is the source of truth; this Storybook lets developers browse all 33 components, try every variant and property, read when to use each one, and jump back to Figma.
+
+**Documentation, not production code.** The components are working replicas built only on the design tokens: fields accept typing, checkboxes check, selects open and pick, uploads upload, modals trap focus. Copy the names, tokens and behaviour into your own codebase.
+
+## Names match Figma exactly
+- Sidebar groups = Figma page groups: Foundations (⭐Setup), Form Elements, Navigation, Data Display. Inside a group, Atoms come first.
+- Story titles = Figma component names (`Input / Text` shows as Input, then Text).
+- Controls = Figma variant and property names with the Figma defaults (`State`, `Show Leading Icon`, `Leading Icon`). Instance swap options are the Figma icon names (`Icon/Calendar`).
+- Tokens = Figma variable names. CSS rule: lowercase, `/` and spaces become `-` (`color/action/primary/bg` becomes `--color-action-primary-bg`).
+
+## Each component page
+The Figma description (Purpose, Usage rules, Accessibility), when to use and when not to, a Playground with every Figma property as a control, one story per variant value and per State, an **All variants** grid, and an interactive **In use** example where the component lives inside a bigger one.
+
+## Modes
+ClinicSoft is **Dark only**: the Semantic collection has one mode, Dark. The **Mode** toolbar switches Desktop, iPad and Mobile (Typography and Spacing collections).
+
+## For AI agents
+While Storybook runs (`npm run storybook`, port 6007), the MCP endpoint is `http://localhost:6007/mcp`. Agents can list components, read these docs and props, and preview stories before building UI.
+
+## Regenerate after Figma changes (from the Root)
+```
+python tools/tokens_to_css.py "My Projects/ClinicSoft"
+python tools/storybook_stories.py "My Projects/ClinicSoft"
+python tools/storybook_parity.py "My Projects/ClinicSoft"
+```

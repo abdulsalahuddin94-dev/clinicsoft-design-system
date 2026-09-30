@@ -1,0 +1,39 @@
+{
+  "platform": "Web",
+  "figma_file": "NEW PROJECT Design system (to be renamed ClinicSoft Design System)",
+  "figma_url": "https://www.figma.com/design/m0G6wKSbVhgqWutfmt7vFU",
+  "collections": {
+    "VariableCollectionId:2:2": {
+      "name": "Primitives",
+      "role": "primitive"
+    },
+    "VariableCollectionId:3:74": {
+      "name": "Semantic",
+      "role": "semantic"
+    },
+    "VariableCollectionId:3:135": {
+      "name": "Spacing",
+      "role": "spacing"
+    },
+    "VariableCollectionId:3:160": {
+      "name": "Radius",
+      "role": "radius"
+    },
+    "VariableCollectionId:3:170": {
+      "name": "Opacity",
+      "role": "opacity"
+    },
+    "VariableCollectionId:3:172": {
+      "name": "Typography",
+      "role": "typography"
+    }
+  },
+  "ramp": {
+    "method": "oklch",
+    "base_step": "500",
+    "order": "ascending",
+    "base_steps": {
+      "brand": "600"
+    }
+  }
+}
