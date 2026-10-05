@@ -11,7 +11,7 @@ Intake answers (Design_System_Intake_Skill). Paths are relative to the Root.
 | 0.4 | Color modes | Dark only |
 | 0.5 | Arabic / RTL | No |
 | 0.6 | Fonts | Poppins (Latin only) |
-| 0.7 | Storybook | Yes (Abdul, 2026-09-30): `storybook/`, run `npm --prefix "My Projects/ClinicSoft/storybook" run storybook` (port 6007) or the `clinicsoft-web-storybook` preview; MCP at http://localhost:6007/mcp while it runs |
+| 0.7 | Storybook | Yes (Abdul, 2026-09-30): `storybook/`, run `npm --prefix "My Projects/ClinicSoft/storybook" run storybook` (port 6007) or the `clinicsoft-web-storybook` preview; MCP at http://localhost:6007/mcp while it runs. Published (Abdul, 2026-10-05): public repo https://github.com/abdulsalahuddin94-dev/clinicsoft-design-system, live docs https://abdulsalahuddin94-dev.github.io/clinicsoft-design-system/ (rebuilt by `.github/workflows/storybook-pages.yml` on every push to master) |
 
 ## Platform
 | # | Question | Answer |
