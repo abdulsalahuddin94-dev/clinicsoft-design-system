@@ -22,5 +22,7 @@
         "library_updates_accepted": true
       }
     ]
-  }
+  },
+  "storybook_publish": "pages",
+  "storybook_url": "https://abdulsalahuddin94-dev.github.io/clinicsoft-design-system/"
 }
