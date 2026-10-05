@@ -7,7 +7,7 @@ import { Modal, ModalInUse } from '../../components/DataDisplay';
 const meta = {
   title: "Data Display/Modal",
   component: Modal,
-  tags: ['autodocs', 'tier-organism'],
+  tags: ['!autodocs', 'tier-organism'],
   argTypes: {
   "Type": {
     "control": "inline-radio",

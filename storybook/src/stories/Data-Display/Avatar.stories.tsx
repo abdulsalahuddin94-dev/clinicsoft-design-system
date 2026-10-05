@@ -7,7 +7,7 @@ import { Avatar } from '../../components/DataDisplay';
 const meta = {
   title: "Data Display/Avatar",
   component: Avatar,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Type": {
     "control": "inline-radio",
@@ -74,6 +74,20 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {};
 export const Initials: Story = { name: "Initials", args: { "Type": "Initials" } };
 export const Icon: Story = { name: "Icon", args: { "Type": "Icon" } };
+
+export const Sizes: Story = {
+  name: "Sizes",
+  render: (args) => (
+    <div className="sb-row">
+      {["24", "32", "40", "60", "100"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">Size={x}</div>
+          <Avatar {...args} {...{ "Size": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

@@ -7,7 +7,7 @@ import { Menu, MenuInUse } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Menu",
   component: Menu,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {},
   args: {},
   parameters: {

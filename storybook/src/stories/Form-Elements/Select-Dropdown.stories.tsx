@@ -7,7 +7,7 @@ import { SelectDropdown } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/Select / Dropdown",
   component: SelectDropdown,
-  tags: ['autodocs', 'tier-organism'],
+  tags: ['!autodocs', 'tier-organism'],
   argTypes: {
   "Open": {
     "control": "inline-radio",
@@ -103,6 +103,20 @@ export const StateError: Story = { name: "State=Error", args: { "State": "Error"
 export const StateDisabled: Story = { name: "State=Disabled", args: { "State": "Disabled" } };
 export const StateFocus: Story = { name: "State=Focus", args: { "State": "Focus" } };
 export const StateSuccess: Story = { name: "State=Success", args: { "State": "Success" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Filled", "Error", "Disabled", "Focus", "Success"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <SelectDropdown {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

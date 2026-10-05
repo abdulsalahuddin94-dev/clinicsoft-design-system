@@ -7,7 +7,7 @@ import { Stepper } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/Stepper",
   component: Stepper,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "State": {
     "control": "inline-radio",
@@ -51,6 +51,20 @@ export const Default: Story = { name: "Default", args: { "State": "Default" } };
 export const Min: Story = { name: "Min", args: { "State": "Min" } };
 export const Max: Story = { name: "Max", args: { "State": "Max" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Min", "Max", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <Stepper {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

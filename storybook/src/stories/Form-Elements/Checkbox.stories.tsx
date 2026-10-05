@@ -7,7 +7,7 @@ import { Checkbox } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/Checkbox",
   component: Checkbox,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Checked": {
     "control": "inline-radio",
@@ -81,6 +81,20 @@ export const StateHover: Story = { name: "State=Hover", args: { "State": "Hover"
 export const StateFocus: Story = { name: "State=Focus", args: { "State": "Focus" } };
 export const StateError: Story = { name: "State=Error", args: { "State": "Error" } };
 export const StateDisabled: Story = { name: "State=Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Focus", "Error", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <Checkbox {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

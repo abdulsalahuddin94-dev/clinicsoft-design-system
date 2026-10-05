@@ -7,7 +7,7 @@ import { Sidebar } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Sidebar",
   component: Sidebar,
-  tags: ['autodocs', 'tier-organism'],
+  tags: ['!autodocs', 'tier-organism'],
   argTypes: {},
   args: {},
   parameters: {

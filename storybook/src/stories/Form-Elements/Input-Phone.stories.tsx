@@ -8,7 +8,7 @@ import { iconNames } from '../../lib/Icon';
 const meta = {
   title: "Form Elements/Input / Phone",
   component: InputPhone,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "State": {
     "control": "select",
@@ -179,6 +179,20 @@ export const Filled: Story = { name: "Filled", args: { "State": "Filled" } };
 export const Error: Story = { name: "Error", args: { "State": "Error" } };
 export const Success: Story = { name: "Success", args: { "State": "Success" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Focus", "Filled", "Error", "Success", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <InputPhone {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

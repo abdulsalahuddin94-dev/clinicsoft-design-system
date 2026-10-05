@@ -8,7 +8,7 @@ import { iconNames } from '../../lib/Icon';
 const meta = {
   title: "Navigation/Sidebar / Item",
   component: SidebarItem,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "State": {
     "control": "select",
@@ -75,6 +75,20 @@ export const Hover: Story = { name: "Hover", args: { "State": "Hover" } };
 export const Selected: Story = { name: "Selected", args: { "State": "Selected" } };
 export const Focus: Story = { name: "Focus", args: { "State": "Focus" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Selected", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <SidebarItem {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

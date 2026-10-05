@@ -42,8 +42,8 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          'Introduction',
-          'Foundations', ['Colors', 'Typography', 'Spacing', 'Radius', 'Shadows', 'Icons'],
+          'Welcome',
+          'Foundations', ['Colors', 'Typography', 'Sizing', 'Effects', 'Icons'],
           'Form Elements', ['Checkbox', 'Radio', 'Toggle', 'Input', ['Text', 'Password', 'Date', 'Phone'], 'Text Area', 'Search', 'Upload Field', 'OTP', ['Cell', 'Field'], 'Stepper', 'Select'],
           'Navigation', ['Button', 'Icon Button', 'Tabs', ['Item', 'Bar'], 'Pagination', 'Breadcrumb', 'Menu', 'Sidebar', 'Top Bar'],
           'Data Display', ['Badge', 'Avatar', 'Tooltip', 'Alert', 'Toast', 'Modal'],

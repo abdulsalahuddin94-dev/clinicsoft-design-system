@@ -7,7 +7,7 @@ import { Breadcrumb } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Breadcrumb",
   component: Breadcrumb,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {},
   args: {},
   parameters: {

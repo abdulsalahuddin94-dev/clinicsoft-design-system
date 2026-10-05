@@ -7,7 +7,7 @@ import { TabsBar } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Tabs / Bar",
   component: TabsBar,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "Type": {
     "control": "inline-radio",

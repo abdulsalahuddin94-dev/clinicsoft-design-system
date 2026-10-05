@@ -7,7 +7,7 @@ import { OTPCell } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/OTP / Cell",
   component: OTPCell,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "State": {
     "control": "select",
@@ -57,6 +57,20 @@ export const Error: Story = { name: "Error", args: { "State": "Error" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
 export const Hover: Story = { name: "Hover", args: { "State": "Hover" } };
 export const Success: Story = { name: "Success", args: { "State": "Success" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Focus", "Filled", "Error", "Disabled", "Hover", "Success"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <OTPCell {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

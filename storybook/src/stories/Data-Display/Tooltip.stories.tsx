@@ -7,7 +7,7 @@ import { Tooltip, TooltipInUse } from '../../components/DataDisplay';
 const meta = {
   title: "Data Display/Tooltip",
   component: Tooltip,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Arrow": {
     "control": "inline-radio",
@@ -75,6 +75,20 @@ export const Up: Story = { name: "Up", args: { "Arrow": "Up" } };
 export const Down: Story = { name: "Down", args: { "Arrow": "Down" } };
 export const Left: Story = { name: "Left", args: { "Arrow": "Left" } };
 export const Right: Story = { name: "Right", args: { "Arrow": "Right" } };
+
+export const Sizes: Story = {
+  name: "Sizes",
+  render: (args) => (
+    <div className="sb-row">
+      {["Small", "Large"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">Size={x}</div>
+          <Tooltip {...args} {...{ "Size": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

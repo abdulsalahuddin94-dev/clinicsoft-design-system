@@ -8,7 +8,7 @@ import { iconNames } from '../../lib/Icon';
 const meta = {
   title: "Navigation/Icon Button",
   component: IconButton,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Type": {
     "control": "inline-radio",
@@ -92,6 +92,34 @@ export const StateHover: Story = { name: "State=Hover", args: { "State": "Hover"
 export const StatePressed: Story = { name: "State=Pressed", args: { "State": "Pressed" } };
 export const StateFocus: Story = { name: "State=Focus", args: { "State": "Focus" } };
 export const StateDisabled: Story = { name: "State=Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Pressed", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <IconButton {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
+
+export const Sizes: Story = {
+  name: "Sizes",
+  render: (args) => (
+    <div className="sb-row">
+      {["xs", "sm", "base", "lg", "xl"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">Size={x}</div>
+          <IconButton {...args} {...{ "Size": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

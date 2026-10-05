@@ -7,7 +7,7 @@ import { UploadField } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/Upload Field",
   component: UploadField,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "State": {
     "control": "select",
@@ -87,6 +87,20 @@ export const Uploaded: Story = { name: "Uploaded", args: { "State": "Uploaded" }
 export const Error: Story = { name: "Error", args: { "State": "Error" } };
 export const Focus: Story = { name: "Focus", args: { "State": "Focus" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Uploading", "Uploaded", "Error", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <UploadField {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

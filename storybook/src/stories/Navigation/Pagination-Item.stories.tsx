@@ -7,7 +7,7 @@ import { PaginationItem } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Pagination / Item",
   component: PaginationItem,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "State": {
     "control": "select",
@@ -53,6 +53,20 @@ export const Hover: Story = { name: "Hover", args: { "State": "Hover" } };
 export const Current: Story = { name: "Current", args: { "State": "Current" } };
 export const Focus: Story = { name: "Focus", args: { "State": "Focus" } };
 export const Disabled: Story = { name: "Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Current", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <PaginationItem {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

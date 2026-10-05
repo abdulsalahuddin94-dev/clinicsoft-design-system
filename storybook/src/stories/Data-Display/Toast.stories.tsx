@@ -7,7 +7,7 @@ import { Toast, ToastInUse } from '../../components/DataDisplay';
 const meta = {
   title: "Data Display/Toast",
   component: Toast,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "Status": {
     "control": "inline-radio",

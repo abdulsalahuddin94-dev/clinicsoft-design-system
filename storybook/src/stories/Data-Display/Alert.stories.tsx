@@ -7,7 +7,7 @@ import { Alert } from '../../components/DataDisplay';
 const meta = {
   title: "Data Display/Alert",
   component: Alert,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "Status": {
     "control": "inline-radio",

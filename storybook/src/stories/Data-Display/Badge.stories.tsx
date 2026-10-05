@@ -8,7 +8,7 @@ import { iconNames } from '../../lib/Icon';
 const meta = {
   title: "Data Display/Badge",
   component: Badge,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Status": {
     "control": "select",
@@ -89,6 +89,20 @@ export const Success: Story = { name: "Success", args: { "Status": "Success" } }
 export const Warning: Story = { name: "Warning", args: { "Status": "Warning" } };
 export const Error: Story = { name: "Error", args: { "Status": "Error" } };
 export const Neutral: Story = { name: "Neutral", args: { "Status": "Neutral" } };
+
+export const Sizes: Story = {
+  name: "Sizes",
+  render: (args) => (
+    <div className="sb-row">
+      {["sm", "md"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">Size={x}</div>
+          <Badge {...args} {...{ "Size": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

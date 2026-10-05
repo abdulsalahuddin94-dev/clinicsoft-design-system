@@ -7,7 +7,7 @@ import { TopBar } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Top Bar",
   component: TopBar,
-  tags: ['autodocs', 'tier-organism'],
+  tags: ['!autodocs', 'tier-organism'],
   argTypes: {
   "Page Title": {
     "control": "text",

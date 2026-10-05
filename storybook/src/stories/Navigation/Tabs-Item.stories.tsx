@@ -8,7 +8,7 @@ import { iconNames } from '../../lib/Icon';
 const meta = {
   title: "Navigation/Tabs / Item",
   component: TabsItem,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Type": {
     "control": "inline-radio",
@@ -91,6 +91,20 @@ export const StateHover: Story = { name: "State=Hover", args: { "State": "Hover"
 export const StateSelected: Story = { name: "State=Selected", args: { "State": "Selected" } };
 export const StateFocus: Story = { name: "State=Focus", args: { "State": "Focus" } };
 export const StateDisabled: Story = { name: "State=Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Selected", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <TabsItem {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',

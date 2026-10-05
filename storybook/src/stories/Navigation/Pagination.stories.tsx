@@ -7,7 +7,7 @@ import { Pagination } from '../../components/Navigation';
 const meta = {
   title: "Navigation/Pagination",
   component: Pagination,
-  tags: ['autodocs', 'tier-molecule'],
+  tags: ['!autodocs', 'tier-molecule'],
   argTypes: {
   "Show Summary": {
     "control": "boolean",

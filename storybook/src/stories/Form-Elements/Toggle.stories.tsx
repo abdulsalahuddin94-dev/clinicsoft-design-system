@@ -7,7 +7,7 @@ import { Toggle } from '../../components/FormElements';
 const meta = {
   title: "Form Elements/Toggle",
   component: Toggle,
-  tags: ['autodocs', 'tier-atom'],
+  tags: ['!autodocs', 'tier-atom'],
   argTypes: {
   "Value": {
     "control": "inline-radio",
@@ -77,6 +77,20 @@ export const StateDefault: Story = { name: "State=Default", args: { "State": "De
 export const StateHover: Story = { name: "State=Hover", args: { "State": "Hover" } };
 export const StateFocus: Story = { name: "State=Focus", args: { "State": "Focus" } };
 export const StateDisabled: Story = { name: "State=Disabled", args: { "State": "Disabled" } };
+
+export const States: Story = {
+  name: "States",
+  render: (args) => (
+    <div className="sb-row">
+      {["Default", "Hover", "Focus", "Disabled"].map((x) => (
+        <div key={x}>
+          <div className="sb-cell-label ts-xs-medium">State={x}</div>
+          <Toggle {...args} {...{ "State": x } as any} />
+        </div>
+      ))}
+    </div>
+  ),
+};
 
 export const AllVariants: Story = {
   name: 'All variants',
