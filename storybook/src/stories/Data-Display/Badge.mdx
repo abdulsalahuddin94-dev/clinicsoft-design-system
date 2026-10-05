@@ -79,7 +79,8 @@ export const docs = {
    "property": "Icon",
    "accepts": "Icon/*",
    "default": "Icon/Info",
-   "rule": "shown when Show Icon = true"
+   "rule": "shown when Show Icon = true",
+   "show": "Show Icon"
   }
  ],
  "guidelines": [
@@ -109,6 +110,7 @@ export const docs = {
  "gaps": [
   "Label default \"Confirmed\" shows on every Status; override it"
  ],
+ "rtl": false,
  "figma_description": "Atom. Purpose: short status label on a record (appointment Confirmed / Pending / Cancelled, lab result New, invoice Draft).\nUsage rules: one or two words; status color matches meaning (Success confirmed/paid, Warning pending/needs review, Error cancelled/overdue, Info new/informational, Neutral draft/archived); never use a Badge as a button; do not use brand/button tokens for status. Show Icon when the badge must be readable without color.\nAccessibility: status text on its status background is at least 4.5:1 (e.g. text/success on bg/success); sm is 20px high, md 24px; meaning must also be in the text, never color alone."
 };
 

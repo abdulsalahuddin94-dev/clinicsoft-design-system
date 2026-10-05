@@ -77,7 +77,8 @@ export const docs = {
    "property": "Leading Icon",
    "accepts": "Icon/*",
    "default": "Icon/Edit",
-   "rule": "shown when Show Leading Icon = true"
+   "rule": "shown when Show Leading Icon = true",
+   "show": "Show Leading Icon"
   }
  ],
  "guidelines": [
@@ -105,6 +106,7 @@ export const docs = {
  "gaps": [
   "Type=Danger shows the default label and Icon/Edit; override on the instance"
  ],
+ "rtl": false,
  "figma_description": "Atom. Purpose: one option in a Menu or Select dropdown (row actions: Edit, Reschedule, Delete; select options: doctor names, clinics).\nUsage rules: used inside Menu or Select only; Selected shows a check for the current value in a Select; Danger for destructive actions, placed last and separated; labels start with a verb for actions.\nAccessibility: 40px high rows; Selected is shown by a check icon and semibold text, not color only; Focus shows the inset focus-ring; role=\"menuitem\"/\"option\" in code."
 };
 

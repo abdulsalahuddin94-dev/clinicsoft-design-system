@@ -102,7 +102,8 @@ export const docs = {
    "property": "Icon",
    "accepts": "Icon/*",
    "default": "Icon/Settings",
-   "rule": null
+   "rule": null,
+   "show": null
   }
  ],
  "guidelines": [
@@ -127,6 +128,7 @@ export const docs = {
  "built_from": [
   "Icon/*"
  ],
+ "rtl": false,
  "figma_description": "Atom. Purpose: an action shown only as an icon (edit, delete, more, close, settings) where space is tight, e.g. table rows and toolbars.\nUsage rules: use only for actions whose icon is universally understood; add a Tooltip with the action name; Filled for the main action in a toolbar, Outline or Ghost for the rest, Danger for destructive actions behind a confirmation. Do not use for primary page actions (use Button with a label).\nAccessibility: minimum 32x32 (xs), 40x40 recommended; icon color on filled green is color/icon/inverse; needs an accessible name (aria-label) in code; Focus shows focus-ring-offset; Disabled uses opacity/disabled."
 };
 

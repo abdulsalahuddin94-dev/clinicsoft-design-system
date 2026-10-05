@@ -106,6 +106,20 @@ export const States: Story = {
   ),
 };
 
+export const Icons: Story = {
+  name: 'Icons',
+  render: (args) => (
+    <div className="sb-row">
+      {[["Show Icon", {"Show Icon": true}]].map(([label, extra]: any) => (
+        <div key={label}>
+          <div className="sb-cell-label ts-xs-medium">{label}</div>
+          <TabsItem {...args} {...extra} />
+        </div>
+      ))}
+    </div>
+  ),
+};
+
 export const AllVariants: Story = {
   name: 'All variants',
   render: (args) => (

@@ -98,7 +98,8 @@ export const docs = {
    "property": "Leading Icon",
    "accepts": "Icon/* (➜ Icons, Lucide, color/icon/*)",
    "default": "Icon/User",
-   "rule": "shown when Show Leading Icon = true (default false)"
+   "rule": "shown when Show Leading Icon = true (default false)",
+   "show": "Show Leading Icon"
   }
  ],
  "guidelines": [
@@ -121,6 +122,7 @@ export const docs = {
   "Icon/Alert Circle",
   "Icon/Check Circle"
  ],
+ "rtl": false,
  "figma_description": "Molecule (Label, Hint, field with Icon atoms, Message). Purpose: free text such as names, addresses and notes on one line.\nUsage rules: always show a Label; Hint sits between the label and the field and explains the format; the Message row below the field shows helper text, or the error/success message in those states; use Show Optional instead of asterisks for optional fields; Filled shows a value, Default shows the placeholder (never use the placeholder as the label).\nAccessibility: field 40px high, border color/border/input (3.7:1 on bg/secondary), Focus 2px color/border/focus; placeholder color/text/placeholder (7:1); errors use icon + text, never color alone; label is linked to the field (for/id) and the message with aria-describedby in code."
 };
 

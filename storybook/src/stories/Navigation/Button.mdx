@@ -125,13 +125,15 @@ export const docs = {
    "property": "Leading Icon",
    "accepts": "Icon/*",
    "default": "Icon/Add",
-   "rule": "shown when Show Leading Icon = true; Loading shows Icon/Loader here"
+   "rule": "shown when Show Leading Icon = true; Loading shows Icon/Loader here",
+   "show": "Show Leading Icon"
   },
   {
    "property": "Trailing Icon",
    "accepts": "Icon/*",
    "default": "Icon/Arrow Right",
-   "rule": "shown when Show Trailing Icon = true"
+   "rule": "shown when Show Trailing Icon = true",
+   "show": "Show Trailing Icon"
   }
  ],
  "guidelines": [
@@ -164,6 +166,7 @@ export const docs = {
   "Icon/*",
   "Icon/Loader"
  ],
+ "rtl": false,
  "figma_description": "Atom. Purpose: triggers an action (save, book, submit) or, as Type=Link, a light inline action.\nUsage rules: one Filled (or Pill) button per view for the main action; Outline for secondary actions; Link for low-emphasis inline actions; Danger only for destructive actions (delete patient record, cancel appointment) and always behind a confirmation. Use Loading while the action runs and keep the label. Do not use a Button to navigate between pages (use Link text or navigation components) and never use Danger for non-destructive actions.\nAccessibility: minimum size 32px (xs) and 40px (base) for primary actions; label text on filled green is color/action/primary/text (gray/950, 5.6:1); Focus shows the focus-ring-offset effect; Disabled uses opacity/disabled and must not be the only way to explain why an action is unavailable."
 };
 

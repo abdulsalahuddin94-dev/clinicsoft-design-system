@@ -80,7 +80,8 @@ export const docs = {
    "property": "Icon",
    "accepts": "Icon/*",
    "default": "Icon/Calendar",
-   "rule": "shown when Show Icon = true"
+   "rule": "shown when Show Icon = true",
+   "show": "Show Icon"
   }
  ],
  "guidelines": [
@@ -108,6 +109,7 @@ export const docs = {
  "built_from": [
   "Icon/*"
  ],
+ "rtl": false,
  "figma_description": "Atom. Purpose: one tab that switches between views of the same page (Patient: Overview / Visits / Prescriptions / Files).\nUsage rules: use inside Tabs / Bar only; Underline for page-level sections, Segmented for compact view switches (Day / Week / Month); exactly one Selected per bar; 2 to 7 tabs; labels are one or two words. To move to another page use navigation (Sidebar, Breadcrumb), not tabs.\nAccessibility: 40px high; selected tab has a 2px color/border/brand underline plus semibold text, so the state is not color only; role=\"tab\" with arrow key navigation in code; Focus shows focus-ring-offset."
 };
 
